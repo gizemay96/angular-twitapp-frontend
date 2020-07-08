@@ -1,0 +1,35 @@
+<div *ngIf = "users; else gettingUser" class="profile-card">
+    <h2>Username : {{users.username}} </h2>
+    <h4>Email : {{users.email}} </h4>
+    <button (click)="editForm()" class="btn">Edit Your Profile</button>
+
+
+    <hr>
+
+    <div *ngIf="show" class="edit-form" (submit) ="saveUser()">
+        <form action="#">
+            <div class="form-control">
+                <label for="username"> Username :
+                    <input type="text" name="username" id="username" [(ngModel)] ="users.username">
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label for="email"> Email :
+                    <input type="text" name="email" id="email" [(ngModel)] ="users.email">
+                </label>
+            </div>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+</div>
+
+
+<ng-template #gettingUser>
+    <div>
+       <h1>Getting User..</h1>
+    </div>
+   </ng-template>
+

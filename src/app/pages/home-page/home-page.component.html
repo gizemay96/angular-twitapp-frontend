@@ -1,0 +1,10 @@
+<div *ngIf="users">
+    <input type="text" name="title" id="title" placeholder="Your Title">
+    <div>
+        <textarea type="text" name="title" id="title" placeholder="Your Title"></textarea>
+    </div>
+</div>
+<div *ngFor ="let post of posts">
+    <p> {{post.title}} </p>
+    <p> {{post.text}} </p>
+</div>
