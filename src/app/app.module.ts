@@ -9,6 +9,9 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TwitInputComponent } from './components/twit-input/twit-input.component';
+import { CommentsPageComponent } from './pages/comments-page/comments-page.component';
+import { CommentFormPageComponent } from './pages/comment-form-page/comment-form-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     LoginPageComponent,
     RegisterPageComponent,
     ProfilePageComponent,
-    HomePageComponent
+    HomePageComponent,
+    TwitInputComponent,
+    CommentsPageComponent,
+    CommentFormPageComponent
   ],
   imports: [
     BrowserModule,

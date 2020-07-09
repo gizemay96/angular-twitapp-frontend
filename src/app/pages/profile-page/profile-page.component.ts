@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { PostService } from '../../services/post.service';
 import { User } from 'src/app/types/user.type';
+import { Post } from 'src/app/types/post.type';
+import { PostRequestModel } from 'src/app/types/postRequestModel.type';
 
 @Component({
   selector: 'app-profile-page',
@@ -8,19 +11,26 @@ import { User } from 'src/app/types/user.type';
   styleUrls: ['./profile-page.component.scss']
 })
 export class ProfilePageComponent implements OnInit {
-   show: boolean = false;
-  
-
+  posts:Post[];
+  show: boolean = false;
   constructor(
-    private userService : UserService
-  ) { }
-
-  ngOnInit(): void {
+    private userService : UserService,
+    private postService : PostService,
+  ) { 
 
   }
 
+  ngOnInit(): void {
+    this.getUserPosts();
+  }
+
   get users() {
-    return this.userService.getUser()
+    return this.userService.getCurrentUser();
+  }
+
+  getUserPosts() {
+   this.postService.loadPost()
+    .subscribe((response:Post[]) => this.posts = response.filter((post) => post.user.id == this.users.id))
   }
 
   editForm() {

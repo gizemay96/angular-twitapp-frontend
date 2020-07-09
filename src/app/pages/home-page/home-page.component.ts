@@ -9,24 +9,23 @@ import { Post } from 'src/app/types/post.type';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
+  posts:Post[];
   constructor(
     private postService: PostService,
     private userService: UserService,
   ) { }
 
   ngOnInit(): void {
+    this.getPosts();
   }
 
   get users () {
-   return  this.userService.getUser()
+   return this.userService.getCurrentUser()
   }
 
-  get posts () {
-   this.postService.getPost();
-   return this.postService.posts;
-    
-  }
-  
+    getPosts () {
+      this.postService.loadPost()
+      .subscribe((response:Post[]) => this.posts = response)
+    } 
 
 }

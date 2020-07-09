@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   }
   
   get user () {
-    return this.userService.getUser();
+    return this.userService.getCurrentUser();
   }
 
   logout () {

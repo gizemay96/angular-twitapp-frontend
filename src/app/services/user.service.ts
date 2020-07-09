@@ -7,18 +7,27 @@ import { User } from '../types/user.type';
 })
 export class UserService {
   baseUrl = 'http://localhost:1337/users'
-  private user: User;
+  private users: User[];
+  private currentUser: User;
 
   constructor(
     private http: HttpClient
   ) { }
 
-  setUser(user:User = null) {
-    this.user = user
+  setCurrentUser(user:User = null) {
+    this.currentUser = user
   }
 
-  getUser() {
-    return this.user;
+  getCurrentUser() {
+    return this.currentUser;
+  }
+
+  getUser(id) {
+    return this.users.find((user) => user.id == id);
+  }
+
+  getUsers() {
+    return this.users;
   }
 
   tryToLogin() {
@@ -31,7 +40,7 @@ export class UserService {
        }
      })
      .subscribe((response: User) => {
-       this.user = response
+       this.currentUser = response
      })
 
   }
@@ -46,7 +55,7 @@ export class UserService {
      }
    })
    .subscribe ((response:User) => {
-     this.user = response
+     this.currentUser = response
    })
   }
 }

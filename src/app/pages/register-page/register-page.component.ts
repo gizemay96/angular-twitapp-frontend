@@ -37,7 +37,7 @@ export class RegisterPageComponent implements OnInit {
       .register(registerData)
       .subscribe((response: AuthResponse) => {
         this.authService.setToken(response.jwt);
-        this.userService.setUser(response.user);
+        this.userService.setCurrentUser(response.user);
 
         this.form.username = '';
         this.form.email = '';

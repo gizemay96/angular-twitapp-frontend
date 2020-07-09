@@ -20,7 +20,7 @@ export class AuthService {
 
   logout() {
     window.localStorage.removeItem('token')
-    this.userService.setUser()
+    this.userService.setCurrentUser()
   }
 
   setToken(token: string) {
