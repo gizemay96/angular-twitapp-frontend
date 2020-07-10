@@ -17,10 +17,18 @@ export class CommentService {
     return this.http.get(`${this.baseUrl}`);
   }
 
+  createComment(newComment) {
+    const token = window.localStorage.getItem('token')
+    if(!token) return;
 
-  // getComments(postId) {
-  //   let comment:Comment[];
-  //   comment = this.comments.filter((comment) => comment.post.id == postId);
-  //   return comment;
-  // }
+    return this.http.post(`${this.baseUrl}`,newComment,{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
+    .subscribe((response: Comment[]) => {
+      this.comments = response
+    })
+  }
+
 }

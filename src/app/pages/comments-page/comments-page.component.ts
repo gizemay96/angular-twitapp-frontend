@@ -28,20 +28,21 @@ export class CommentsPageComponent implements OnInit {
     this.getPosts();
     this.getComments();
   }
-
+  
   getPosts () {
     this.postService.loadPost()
     .subscribe((response:Post[]) => this.posts = response.filter((post) => post.id == this.postId))
     
   }
-
+  
   get users () {
     return this.userService.getCurrentUser();
   }
-
+  
   getComments() {
-   this.commentService.loadComments()
+    this.commentService.loadComments()
     .subscribe((response:Comment[]) => this.comments = response.filter((comment) => comment.post.id == this.postId))
+    
   }
 
 }

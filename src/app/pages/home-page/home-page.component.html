@@ -1,7 +1,8 @@
-<app-twit-input *ngIf="users"></app-twit-input>
- <div *ngFor ="let post of posts">
-    <p> {{post.title}} </p>
-    <p> {{post.text}} </p>
-    <button class="btn" [routerLink]="'/tweet/' + post.id" >detail</button>
-    <button class="btn" [routerLink]="'/commentform/tweet/' + post.id" >Send Reply</button>
+<div>
+<div class="twit-input">
+    <app-twit-input *ngIf="users"></app-twit-input>
+</div>
+<div class="tweets">
+    <app-tweet-card *ngFor ="let post of posts" [post]="post"></app-tweet-card>
+</div>
 </div>

@@ -5,11 +5,12 @@ import { AuthResponse } from '../../types/authResponse.type';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register-page',
-  templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.scss'],
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.scss']
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterFormComponent implements OnInit {
+
   isLoading: boolean = false;
   form = {
     username: '',
@@ -22,9 +23,10 @@ export class RegisterPageComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   register() {
     this.isLoading = true;
@@ -49,4 +51,5 @@ export class RegisterPageComponent implements OnInit {
         this.router.navigateByUrl('/');
       });
   }
+
 }

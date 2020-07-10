@@ -1,0 +1,16 @@
+<div class="commentForm">
+    <form action="#" (submit)="sendComment()">
+        <div class="form-control">
+            <label for="title"> Title :
+                <input type="text" name="title" id="title" [(ngModel)] = "comment.title">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="text"> Text :
+                <textarea type="text" name="text" id="text" [(ngModel)] = "comment.text" ></textarea>
+            </label>
+        </div>
+    
+        <button class="btn">Send Reply</button>
+    </form>
+</div>

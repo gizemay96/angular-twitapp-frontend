@@ -1,0 +1,37 @@
+ <div class="card">
+    <div class="card-body text-light">
+       <div class="profile-img">
+        <img class="sm-circle" src="https://unsplash.it/200/200" alt="">
+       </div>
+        <div class="card-texts">
+        <div class="text-header">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <h6 class="card-nickname">@ {{ post.title }}</h6>
+        </div>
+          <div class="text">
+            <p class="card-text">{{ post.text }}</p>
+          </div>
+        </div>
+    </div>
+    <hr>
+      <div class="card-actions">
+        <button class="btn btn-danger">Like</button>
+        <button class="btn btn-warning">Retweet</button>
+        <button class="btn btn-info" [routerLink]="'/tweet/' + post.id">Detail</button>
+        <button class="btn btn-success" [routerLink]="'/commentform/tweet/' + post.id">
+        Send Reply
+        </button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    
+
+
+
+  

@@ -1,0 +1,43 @@
+.card {
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+
+  hr{
+      border-color: white;
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+
+    .profile-img {
+      max-height: 70px;
+      overflow: hidden;
+    }
+    .card-texts {
+      margin: 0 15px;
+
+      .text-header {
+        display: flex;
+        align-items: center;
+
+        .card-nickname {
+          font-size: 15px;
+          padding: 0px 10px;
+        }
+      }
+    }
+  }
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px 10px 30px;
+  }
+
+  .header {
+    flex-wrap: inherit;
+    align-items: center;
+  }
+}
