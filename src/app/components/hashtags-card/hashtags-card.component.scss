@@ -1,0 +1,50 @@
+.hash-card,.hash-card-two {
+    padding: 0 15px;
+    p{
+        margin: 0;
+    }
+  
+    .category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #8a98a4;
+      font-size: 12px;
+    }
+  
+    .title {
+      padding: 5px 0;
+      color: #ffffff;
+    }
+  
+    .tweet {
+      color: #8a98a4;
+    }
+  }
+  
+  .hash-card-two {
+    margin: 10px 0;
+  
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+  
+      i{
+      color: #8a98a4;
+      font-size: 12px;
+      }
+    }
+    .content {
+      padding: 5px 0;
+      color: #8a98a4;
+      font-size: 12px;
+    }
+  
+  }
+      .tweet {
+        color: #8a98a4;
+        font-size: 12px;
+      }
+

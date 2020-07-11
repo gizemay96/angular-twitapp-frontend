@@ -1,0 +1,79 @@
+
+.comment-form{
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border: 1px solid #3A444C;
+  border-radius: 5px;
+
+  .form-body{
+    display: flex;
+    margin-top: 20px;
+
+    img{
+      margin-right: 20px;
+    }
+  }
+
+
+  #title {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.089);
+      border-radius: 5px;
+      padding: 5px 5px;
+      outline: none;
+      color: white;
+    
+      &::placeholder {
+        color: #b3b3b3;
+      }
+    }
+    
+    #comment {
+      resize: none;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      letter-spacing: 1.5px;
+      font-size: 16px;
+      font-family: Helvetica;
+      margin-top: 30px;
+    }
+
+    .actions{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .action-icons {
+          padding-top: 15px;
+        i {
+          font-size: 17px;
+          margin-right: 25px;
+        }
+
+        .fa-image{
+          color: #17a2b8;
+        }
+
+        .fa-square {
+          color: #dc3545;
+        }
+
+        .fa-poll-h {
+          color: #dc35aa;
+        }
+
+        .fa-smile {
+          color: #fbfd5c;
+          color: #ff682c;
+        }
+
+        .fa-business-time {
+          color: #ff682c;
+        }
+      }
+      
+    }
+
+}

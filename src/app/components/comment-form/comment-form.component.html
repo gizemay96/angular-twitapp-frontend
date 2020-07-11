@@ -1,16 +1,45 @@
-<div class="commentForm">
+<div class="comment-form">
     <form action="#" (submit)="sendComment()">
-        <div class="form-control">
-            <label for="title"> Title :
-                <input type="text" name="title" id="title" [(ngModel)] = "comment.title">
-            </label>
+     <div>
+        <div class="form-item">
+            <label for="name"></label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Your Title.."
+              [(ngModel)]="comment.title"
+            />
+          </div>
+     </div>
+     <div class="form-body">
+         <div>
+             <img class="sm-circle" src="https:/unsplash.it/200/202" alt="">
+         </div>
+        <div class="form-item">
+            <label for="text"></label>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="47"
+              rows="5"
+              placeholder="Tweet your reply"
+              [(ngModel)]="comment.text"
+            ></textarea>
+          </div>
+     </div>
+      <div class="actions">
+        <div class="action-icons">
+          <a href="/"><i class="far fa-image"></i></a>
+          <a href="/"><i class="far fa-square"></i></a>
+          <a href="/"><i class="fas fa-poll-h"></i></a>
+          <a href="/"><i class="far fa-smile"></i></a>
+          <a href="/"><i class="fas fa-business-time"></i></a>
         </div>
-        <div class="form-control">
-            <label for="text"> Text :
-                <textarea type="text" name="text" id="text" [(ngModel)] = "comment.text" ></textarea>
-            </label>
+        <div class="action-btn">
+          <button class="btn btn-success" type="submit">Reply</button>
         </div>
-    
-        <button class="btn">Send Reply</button>
+      </div>
     </form>
-</div>
+  </div>
+  

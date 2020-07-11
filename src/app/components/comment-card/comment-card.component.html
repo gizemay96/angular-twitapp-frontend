@@ -1,0 +1,76 @@
+<div *ngFor="let comment of comments" class="card">
+  <div class="card-body text-light">
+    <div class="profile-img">
+      <img class="sm-circle" src="https://unsplash.it/200/200" alt="" />
+    </div>
+    <div class="card-texts">
+      <div class="text-header">
+        <h5 class="card-title">{{ comment.title }}</h5>
+        <h6 class="card-nickname">@ {{ comment.user.username }}</h6>
+      </div>
+      <div class="text">
+        <p class="card-text">{{ comment.text }}</p>
+      </div>
+      <div class="comment-date">
+        <p>{{ comment.created_at | date: "h:mm:ss a ,MMM d,y" }}</p>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div *ngIf="users; else disableActions" class="card-actions">
+    <div class="like-btn">
+      <button
+        (click)="likeComment(comment)"
+        [id]="'like-' + comment.id"
+        class="btn btn-outline-danger action-btn"
+      >
+        <i class="fas fa-heart"></i>
+      </button>
+      <label [for]="'like-' + comment.id"> {{ comment.likeCount }} </label>
+    </div>
+    <div class="retweet-btn">
+      <button
+        (click)="recomment(comment)"
+        [id]="'retweet-' + comment.id"
+        class="btn btn-outline-warning action-btn"
+      >
+        <i class="fas fa-retweet"></i>
+      </button>
+      <label [for]="'retweet-' + comment.id">
+        {{ comment.retweetCount }}
+      </label>
+    </div>
+  </div>
+
+  <!-- ------------------------ IF THE IS NO USER ------------------------ -->
+  <ng-template #disableActions>
+    <div class="card-actions">
+      <div class="like-btn">
+        <button
+          disabled
+          (click)="likeComment(comment)"
+          [id]="'like-' + comment.id"
+          class="btn btn-outline-danger action-btn"
+        >
+          <i class="fas fa-heart"></i>
+        </button>
+        <label [for]="'like-' + comment.id"> {{ comment.likeCount }} </label>
+      </div>
+      <div class="retweet-btn">
+        <button
+          disabled
+          (click)="recomment(comment)"
+          [id]="'retweet-' + comment.id"
+          class="btn btn-outline-warning action-btn"
+        >
+          <i class="fas fa-retweet"></i>
+        </button>
+        <label [for]="'retweet-' + comment.id">
+          {{ comment.retweetCount }}
+        </label>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- ------------------------ IF THE IS NO USER ------------------------ -->
+</div>

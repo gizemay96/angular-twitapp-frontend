@@ -1,19 +1,113 @@
 /* You can add global styles to this file, and also import other style files */
-*,*::after,*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background: #293133 !important;
+body {
+  background: #293133 !important;
 }
 
-.sm-circle{
-    border-radius: 50%;
-    max-width: 70px;
+.sm-circle {
+  border-radius: 50%;
+  max-width: 70px;
+}
+
+.xs-circle {
+  border-radius: 50%;
+  max-width: 50px;
+}
+
+.line {
+  background-color: #3a444c;
+  max-width: 650px;
+  height: 1px;
+  margin: 10px 0;
+}
+
+
+.like-btn {
+    display: flex;
+    align-items: center;
+  .action-btn {
+    padding: 0 6px !important;
+    border-radius: 100px !important;
+
+    i {
+      font-size: 13px;
+    }
+  }
+  label {
+    color: rgba(255, 255, 255, 0.493);
+    transform: translateY(4px);
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+
+.retweet-btn {
+    display: flex;
+    align-items: center;
+  .action-btn {
+    padding: 0 5px !important;
+    border-radius: 100px !important;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.493);
+    }
+
+    i {
+      font-size: 13px;
+    }
+  }
+  label {
+    color: rgba(255, 255, 255, 0.493);
+    transform: translateY(4px);
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+
+.detail-btn {
+    display: flex;
+    align-items: center;
+  .action-btn {
+    padding: 2px 7.3px !important;
+    border-radius: 100px !important;
+
+    i {
+      font-size: 13px;
+    }
+  }
+  label {
+    color: rgba(255, 255, 255, 0.493);
+    transform: translateY(4px);
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+
+.reply-btn {
+    display: flex;
+    align-items: center;
+  .action-btn {
+    padding: 0 6px !important;
+    border-radius: 100px !important;
+
+    i {
+      font-size: 13px;
+    }
+  }
+  label {
+    color: rgba(255, 255, 255, 0.493);
+    transform: translateY(4px);
+    padding: 0 10px;
+    cursor: pointer;
+  }
 }
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";

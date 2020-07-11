@@ -1,11 +1,12 @@
-<p>comment-form-page works!</p>
-<div *ngFor = "let post of posts">
-    <p> {{post.title}} </p>
-    <p> {{post.text}} </p>
-</div>
-<br><br>
-<hr>
-<br>
-<div>
+<div class="comment-form-page">
+  <div class="greeting-text">
+    <h4>Comment Form</h4>
+    <hr />
+  </div>
+  <div class="selected-tweet">
+    <app-tweet-card (likeTweet)="like($event)" [posts]="posts"></app-tweet-card>
+  </div>
+  <div class="comment-form">
     <app-comment-form></app-comment-form>
+  </div>
 </div>

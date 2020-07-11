@@ -1,0 +1,30 @@
+.profile-page {
+  hr {
+    background-color: snow;
+  }
+
+  .edit-form {
+    display: flex;
+    justify-content: center;
+  }
+
+  .edit-btn {
+    margin: 15px 40px;
+  }
+
+  .edit-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .greeting-text {
+    padding: 0 0 20px 0;
+    font-size: 18px;
+    color: honeydew;
+    text-shadow: 5px 5px 15px black;
+  }
+
+  hr {
+    background-color: white;
+  }
+}

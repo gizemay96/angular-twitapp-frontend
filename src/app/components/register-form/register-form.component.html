@@ -1,35 +1,48 @@
-<div class="card">
-    <form (submit) ="register()">
-        <div class="form-control">
-            <label for="username">
-                Username
-                <input [(ngModel)] = "form.username" name="username" id="username" type="text">
-            </label>
-        </div>
+<div class="login-card">
+    <form class="box" (submit)="register()">
+      <h1>Join Us !</h1>
+      <p class="text-muted">Please enter your Form!</p>
+      <label for="username"></label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="form.username"
+      />
 
-            <div class="form-control">
-                <label for="email">
-                    Email
-                    <input [(ngModel)] = "form.email" name="email" id="email" type="text">
-                </label>
-            </div>
+      <label for="email"></label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Email"
+        [(ngModel)]="form.email"
+      />
 
-            <div class="form-control">
-                <label for="password">
-                    Password
-                    <input [(ngModel)] = "form.password" name="password" id="password" type="password">
-                </label>
-            </div>
+    
+      <label for="password"></label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="form.password"
+      />
 
-            <div class="form-control">
-                <label for="confirm-password">
-                    Confirm Password
-                    <input [(ngModel)] = "form.confirmPassword" name="confirm-password" id="confirm-password" type="password">
-                </label>
-            </div>
-        <div class="form-actions">
-            <button class="btn" type="submit" [disabled] ="isLoading"> 
-            {{ isLoading ?  'Loading...' : 'Register'}} </button>
-        </div>
+      <label for="confirm-password"></label>
+      <input
+        type="password"
+        id="confirm-password"
+        name="confirm-password"
+        placeholder="Confirm Password"
+        [(ngModel)]="form.confirmPassword"
+      />
+
+
+
+      <button class="btn-login" type="submit" [disabled]="isLoading">
+        {{ isLoading ? "Loading..." : "Login" }}
+      </button>
     </form>
-</div>
+  </div>

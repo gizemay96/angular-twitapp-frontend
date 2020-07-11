@@ -3,8 +3,9 @@
     display: grid;
     grid-template-columns: 9fr 3fr;
     grid-gap: 50px;
+    padding: 0 200px;
 
     .page-side-bar{
-        border: 3px solid gray;
+        margin-top: 70px;
     }
 }

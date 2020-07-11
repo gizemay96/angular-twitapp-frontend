@@ -5,6 +5,8 @@ import { CommentService } from '../../services/comment.service';
 import { Comment } from '../../types/comment.type';
 import { Post } from '../../types/post.type';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -27,6 +29,7 @@ export class CommentFormComponent implements OnInit {
     private postService: PostService,
     private commentService: CommentService,
     private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -51,11 +54,16 @@ export class CommentFormComponent implements OnInit {
       user:this.users,
       post:this.posts,
       created_at:'',
-      updated_at:''
+      updated_at:'',
+      likeCount:0,
+      retweetCount:0
     };
+    this.commentService.createComment(newComment);
 
+    this.comment.title = '';
+    this.comment.text = '';
 
-    this.commentService.createComment(newComment)
+    this.router.navigateByUrl('/tweet/'+ this.posts.id);
   }
 
 }

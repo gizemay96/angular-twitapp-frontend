@@ -31,4 +31,29 @@ export class CommentService {
     })
   }
 
+  likeComment(likeComment:Comment) {
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
+
+    this.http.put(`${this.baseUrl}/${likeComment.id}`, likeComment , {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .subscribe(response => this.comments);
+  }
+
+  reComment(reComment:Comment) {
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
+
+    this.http.put(`${this.baseUrl}/${reComment.id}`, reComment , {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .subscribe(response => this.comments);
+
+  }
+
 }

@@ -2,22 +2,26 @@
   <a routerLink="/" class="app-logo">Hued Tweet</a>
 
   <div *ngIf="!user; else userMenu" class="nav-links">
-    <button
+    <div class="nav-link">
+      <button
       type="button"
-      class="btn btn-primary"
+      class="btn btn-outline-success"
       data-toggle="modal"
       data-target="#exampleLogin"
     >
       Login
     </button>
-    <button
+    </div>
+    <div class="nav-link">
+      <button
       type="button"
-      class="btn btn-primary"
+      class="btn btn-outline-warning"
       data-toggle="modal"
       data-target="#exampleRegister"
     >
       Register
     </button>
+    </div>
   </div>
 
   <!-- ********************* MODALS ***************** -->
@@ -32,7 +36,7 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+      <div class="modal-content login-modal">
         <app-login-form></app-login-form>
       </div>
     </div>
@@ -40,7 +44,7 @@
 
   <!--------- Register Modal ------------->
   <div
-    class="modal fade"
+    class="modal fade "
     id="exampleRegister"
     tabindex="-1"
     role="dialog"
@@ -48,8 +52,8 @@
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <app-register-form></app-register-form>>
+      <div class="modal-content register-modal">
+        <app-register-form></app-register-form>
       </div>
     </div>
   </div>

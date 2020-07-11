@@ -3,50 +3,51 @@ import { Injectable } from '@angular/core';
 import { Post } from '../types/post.type';
 import { PostRequestModel } from '../types/postRequestModel.type';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
-  baseUrl = 'http://localhost:1337/posts'
-  posts:Post[];
-  //request:PostRequestModel;
+  post: Post[];
+  baseUrl = 'http://localhost:1337/posts';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
- loadPost() {
-   return this.http.get(`${this.baseUrl}`);
- }
- 
-  getPost() {
-   return this.posts;
+  loadPost() {
+    return this.http.get(`${this.baseUrl}`);
   }
 
-  // getPostFilter(request: PostRequestModel) {
-  //   if (request !=undefined && request != null) {
-  //     if(request.userId != null){
-  //       let responsePost : Post[];
-  //       responsePost = this.posts.filter(post => post.user.id == request.userId);
-  //       return responsePost;
-  //     }    
-  //   }
-  //  }
+  likePost(likedTweet: Post) {
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
 
-
-  createPost (newTweet) {
-    const token = window.localStorage.getItem('token')
-    if(!token) return;
-
-    return this.http.post(`${this.baseUrl}`,newTweet,{
-      headers:{
-        Authorization:`Bearer ${token}`
-      }
+    this.http.put(`${this.baseUrl}/${likedTweet.id}`, likedTweet , {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     })
-    .subscribe((response: Post[]) => {
-      this.posts = response
+    .subscribe(response => this.post);
+  }
+
+  rePost(reTweet:Post) {
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
+
+    this.http.put(`${this.baseUrl}/${reTweet.id}`, reTweet , {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     })
-    
+    .subscribe(response => this.post);
+  }
+
+  createPost(newTweet: Post) {
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
+
+    return this.http.post(`${this.baseUrl}`, newTweet, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 }

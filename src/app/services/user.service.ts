@@ -22,12 +22,8 @@ export class UserService {
     return this.currentUser;
   }
 
-  getUser(id) {
-    return this.users.find((user) => user.id == id);
-  }
-
   getUsers() {
-    return this.users;
+    return this.http.get(`${this.baseUrl}`)
   }
 
   tryToLogin() {

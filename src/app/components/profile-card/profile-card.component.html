@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="cover">
+    <img class="cover-img" src="https:/unsplash.it/600/309" alt="" />
+  </div>
+  <div class="image">
+    <img class="profile-img" src="https:/unsplash.it/700/707" alt="" />
+  </div>
+
+  <div class="card-texts">
+  <div>
+    <h3>{{ users.username }}</h3>
+    <p>@ {{ users.username }}</p>
+  </div>
+  <div class="lorem">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut est risus, feugiat gravida risus quis, venenatis bibendum leo. Pellentesque eleifend porttitor leo eu pharetra. </p>
+  </div>
+  <div class="user-info">
+      <div class="email info-item">
+        <i class="far fa-envelope-open mail-icon"></i> <p> {{users.email}} </p>
+      </div>
+      <div class="created-date info-item">
+        <i class="far fa-calendar-alt date-icon"></i> <p> {{ users.created_at | date: "h:mm:ss a ,MMM d,y" }} </p>
+      </div>
+  </div>
+  </div>
+</div>

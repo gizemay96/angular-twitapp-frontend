@@ -1,39 +1,43 @@
-<div *ngIf = "users; else gettingUser" class="profile-card">
-    <h2>Username : {{users.username}} </h2>
-    <h4>Email : {{users.email}} </h4>
-    <button (click)="editForm()" class="btn">Edit Your Profile</button>
+<div class="profile-page">
+  <div class="greeting-text">
+    <h4>{{ users.username }}</h4>
+    <hr />
+  </div>
 
+  <div *ngIf="users" class="profile-card">
+    <app-profile-card [users]="users"></app-profile-card>
 
-    <hr>
-
-    <div *ngIf="show" class="edit-form" (submit) ="saveUser()">
-        <form action="#">
-            <div class="form-control">
-                <label for="username"> Username :
-                    <input type="text" name="username" id="username" [(ngModel)] ="users.username">
-                </label>
-            </div>
-
-            <div class="form-control">
-                <label for="email"> Email :
-                    <input type="text" name="email" id="email" [(ngModel)] ="users.email">
-                </label>
-            </div>
-
-            <button type="submit">Save</button>
-        </form>
+    <div class="edit-actions">
+      <div class="open">
+        <button (click)="editForm()" class="btn btn-warning edit-btn">
+          Edit Your Profile
+        </button>
+      </div>
+      <div class="close">
+        <button
+          *ngIf="show"
+          (click)="closeEditForm()"
+          class="btn btn-danger close-btn"
+        >
+          Close Form
+        </button>
+      </div>
     </div>
 
-</div>
-
-<div *ngFor = "let post of posts">
-    <p> {{post.title}} </p>
-</div>
-
-
-<ng-template #gettingUser>
-    <div>
-       <h1>Getting User..</h1>
+    <div *ngIf="show" class="edit-form">
+      <app-edit-profile-form (formClose)="closeEditForm()"></app-edit-profile-form>
     </div>
-   </ng-template>
 
+    <hr />
+
+    <div class="user-posts">
+      <app-tweet-card [posts]="posts"></app-tweet-card>
+    </div>
+
+    <ng-template #gettingUser>
+      <div>
+        <h1>Getting User..</h1>
+      </div>
+    </ng-template>
+  </div>
+</div>

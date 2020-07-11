@@ -1,0 +1,17 @@
+<div class="user-cards" *ngFor="let user of users">
+  <div class="user-card">
+    <div class="card-body">
+      <div class="card-img">
+        <img class="xs-circle" src="https:/unsplash.it/200/204" alt="" />
+      </div>
+      <div class="card-text">
+        <p class="user-name">{{ user.username }}</p>
+        <p class="user-nick">@ {{ user.username }}</p>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-sm btn-outline-danger">Follow</button>
+    </div>
+  </div>
+  <div class="line"></div>
+</div>

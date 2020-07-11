@@ -1,0 +1,50 @@
+.card {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid #3A444C;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  
+    hr{
+        border-color: #3A444C;
+    }
+  
+    .card-body {
+      display: flex;
+      align-items: center;
+  
+      .profile-img {
+        max-height: 70px;
+        overflow: hidden;
+      }
+      .card-texts {
+        margin: 0 15px;
+  
+        .text-header {
+          display: flex;
+          align-items: center;
+  
+          .card-nickname {
+            font-size: 15px;
+            padding: 0px 10px;
+          }
+        }
+
+        .comment-date{
+          font-size: 10px;
+          position: relative;
+          transform: translateY(20px);
+        }
+      }
+    }
+    .card-actions {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0px 30px 10px 30px;
+    }
+  
+    .header {
+      flex-wrap: inherit;
+      align-items: center;
+    }
+  }

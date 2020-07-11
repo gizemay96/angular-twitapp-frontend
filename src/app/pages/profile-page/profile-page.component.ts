@@ -37,16 +37,8 @@ export class ProfilePageComponent implements OnInit {
     this.show = true;
   }
 
-  saveUser(){
-   const editForm:User = {
-     id: this.users.id,
-     username: this.users.username,
-     email: this.users.email,
-     ...this.users
-   }
-   this.userService.editUser(editForm)
- 
-    
+  closeEditForm() {
+    this.show = false;
   }
 
 }

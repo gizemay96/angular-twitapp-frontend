@@ -1,0 +1,39 @@
+form {
+    margin: 15px 0;
+    width: 500px;
+    background-color: #17181a;
+    border-radius: 10px;
+    padding: 30px;
+
+    .label-username{
+        color: rgb(255, 126, 148);
+    }
+    .label-email{
+        color: rgb(125, 225, 255);
+    }
+
+    input{
+        color: snow;
+        margin: 15px 0;
+        padding: 7px;
+        border: 1px solid gray;
+        border-radius: 15px;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .action{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        button{
+            background-color: rgb(104, 156, 0);
+            color: snow;
+
+            &:hover{
+                background-color: darken(rgb(104, 156, 0), 10%);
+            }
+        }
+    }
+}

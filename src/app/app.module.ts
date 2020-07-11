@@ -16,6 +16,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { CommentCardComponent } from './components/comment-card/comment-card.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { HashtagsCardComponent } from './components/hashtags-card/hashtags-card.component';
+import { FollowCardComponent } from './components/follow-card/follow-card.component';
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+import { EditProfileFormComponent } from './components/edit-profile-form/edit-profile-form.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +36,13 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     TweetCardComponent,
     LoginFormComponent,
     NavbarComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    CommentCardComponent,
+    SideBarComponent,
+    HashtagsCardComponent,
+    FollowCardComponent,
+    ProfileCardComponent,
+    EditProfileFormComponent,
   ],
   imports: [
     BrowserModule,

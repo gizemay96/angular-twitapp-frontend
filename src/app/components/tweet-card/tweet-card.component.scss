@@ -1,10 +1,11 @@
 .card {
   margin-bottom: 20px;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.514);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
 
   hr{
-      border-color: white;
+      border-color: rgba(255, 255, 255, 0.514);
   }
 
   .card-body {
@@ -22,10 +23,29 @@
         display: flex;
         align-items: center;
 
-        .card-nickname {
-          font-size: 15px;
-          padding: 0px 10px;
+        .card-title{
+          font-size: 18px;
+          font-weight: bolder;
         }
+
+        .card-nickname {
+          font-size: 12px;
+          font-weight: 400;
+          padding: 0px 10px;
+          transform: translateY(-2px);
+        }
+
+        
+      }
+
+      .tweet-date{
+        font-size: 10px;
+        position: relative;
+        transform: translateY(20px);
+      }
+
+      .card-text{
+        font-size: 15px;
       }
     }
   }

@@ -1,22 +1,26 @@
-<div class="card">
-    <form (submit) ="login()">
-        <div class="form-control">
-            <label for="identifier">
-                Email or Username
-                <input [(ngModel)] = "form.identifier" name="identifier" id="identifier" type="text">
-            </label>
-        </div>
-
-            <div class="form-control">
-                <label for="password">
-                    Password
-                    <input [(ngModel)] = "form.password" name="password" id="password" type="password">
-                </label>
-            </div>
-        <div class="form-actions">
-            <button class="btn" type="submit" [disabled] ="isLoading">
-                 {{ isLoading ? 'Loading...' : 'Login'}} 
-                </button>
-        </div>
-    </form>
+<div class="login-card">
+  <form class="box" (submit)="login()">
+    <h1>Login</h1>
+    <p class="text-muted">Please enter your Username and password!</p>
+    <label for="identifier"></label>
+    <input
+      type="text"
+      id="identifier"
+      name="identifier"
+      placeholder="Username"
+      [(ngModel)]="form.identifier"
+    />
+    <label for="password"></label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+      [(ngModel)]="form.password"
+    />
+    <a class="forgot text-muted" href="#">Forgot password?</a>
+    <button class="btn-login" type="submit" [disabled]="isLoading">
+      {{ isLoading ? "Loading..." : "Login" }}
+    </button>
+  </form>
 </div>

@@ -1,8 +1,12 @@
-<div>
+<div class="home-page">
+   <div class="greeting-text">
+    <h4>Home Page</h4>
+    <hr>
+   </div>
 <div class="twit-input">
-    <app-twit-input *ngIf="users"></app-twit-input>
+    <app-twit-input *ngIf="users" (outputGetPost)="getPosts()"></app-twit-input>
 </div>
 <div class="tweets">
-    <app-tweet-card *ngFor ="let post of posts" [post]="post"></app-tweet-card>
+    <app-tweet-card [users] = "users" [posts]="posts" (likeTweet)="like($event)"  (reTweet)="retweet($event)"></app-tweet-card>
 </div>
 </div>

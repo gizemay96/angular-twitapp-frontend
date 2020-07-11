@@ -1,0 +1,60 @@
+.card {
+  background-color: transparent;
+  padding: 10px 40px;
+  border: none;
+  .cover {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .cover-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+
+  .image {
+    margin: 0 20px;
+    width: 250px;
+    overflow: hidden;
+    transform: translateY(150px);
+    position: absolute;
+
+    .profile-img {
+      width: 100%;
+      border: 6px solid black;
+      border-radius: 50%;
+    }
+  }
+
+  .card-texts {
+    margin-top: 120px;
+    color: snow;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .user-info {
+    display: flex;
+
+    .info-item {
+      .date-icon {
+        color: greenyellow;
+      }
+      .mail-icon {
+        color: orangered;
+      }
+      i {
+        padding-right: 10px;
+      }
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

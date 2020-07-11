@@ -1,0 +1,28 @@
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    p{
+        margin: 0;
+        color: white;
+    }
+.card-body{
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    
+    .card-img{
+        width: 60px;
+    }
+
+    .card-text{
+        .user-name{
+            font-size: 18px;
+        }
+
+        .user-nick{
+            font-size: 14px;
+        }
+    }
+}
+}

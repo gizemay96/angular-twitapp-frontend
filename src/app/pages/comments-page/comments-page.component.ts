@@ -45,4 +45,21 @@ export class CommentsPageComponent implements OnInit {
     
   }
 
+  like(post:Post) {
+    post.likeCount ++;
+    this.postService.likePost(post);
+  }
+
+  likeCommentClick(comment:Comment) {
+    comment.likeCount ++;
+    this.commentService.likeComment(comment);
+
+  }
+
+  reCommentClick(comment:Comment) {
+    comment.retweetCount ++;
+    this.commentService.reComment(comment);
+
+  }
+
 }

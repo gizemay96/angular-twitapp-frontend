@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: slateblue;
+    background-color: rgba(0, 0, 0, 0.678);
     padding: 0 60px;
     color: snow;
 
@@ -13,7 +13,7 @@
         padding: 20px;
 
         &:hover{
-            background: darken(slateblue, 10%);
+            background: darken(orangered, 10%);
         }
     }
 
@@ -25,12 +25,24 @@
     .nav-links{
         display: flex;
         align-items: center;
-        
     }
 
+    .login-navbar{
+        display: flex;
+        align-items: center;
+    }
 }
 
-.login-navbar{
-    display: flex;
-    align-items: center;
+.login-modal{
+    background-color: rgba(0, 0, 0, 0.651);
+    border-color: #2ecc71;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.register-modal{
+    background-color: rgba(0, 0, 0, 0.651);
+    border-color: #ffc107;
+    border-radius: 15px;
+    overflow: hidden;
 }
