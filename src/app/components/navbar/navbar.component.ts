@@ -9,6 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavbarComponent implements OnInit {
   @Input() user;
 
+  isLoginModalActive: boolean = false;
+
   constructor(
     private authService: AuthService
 
@@ -19,6 +21,10 @@ export class NavbarComponent implements OnInit {
 
   logout () {
     this.authService.logout();
+  }
+
+  loginModalHide(value) {
+    this.isLoginModalActive = value;
   }
 
 }

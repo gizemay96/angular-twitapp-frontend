@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 import { AuthResponse } from '../../types/authResponse.type';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
+  @Output() isLoginModalHide = new EventEmitter<boolean>();
   isLoading: boolean = false;
   form = {
     identifier: '',
@@ -39,8 +40,15 @@ export class LoginFormComponent implements OnInit {
       this.form.identifier = '';
       this.form.password = '';
 
+      this.isLoginModalHide.emit(true);
+
       this.router.navigateByUrl('/profile');
+
+
     })
   }
+
+
+
 
 }

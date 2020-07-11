@@ -28,6 +28,8 @@
 
   <!--------- Login Modal ------------->
   <div
+    [hidden] = "isLoginModalActive"
+    data-dismiss="modal"
     class="modal fade"
     id="exampleLogin"
     tabindex="-1"
@@ -37,7 +39,7 @@
   >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content login-modal">
-        <app-login-form></app-login-form>
+        <app-login-form (isLoginModalHide)="loginModalHide($event)"></app-login-form>
       </div>
     </div>
   </div>
