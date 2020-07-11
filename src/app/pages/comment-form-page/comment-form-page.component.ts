@@ -1,6 +1,7 @@
 import { Component, OnInit , ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../../services/post.service';
+import { UserService } from '../../services/user.service';
 import { Post } from 'src/app/types/post.type';
 
 @Component({
@@ -14,6 +15,7 @@ export class CommentFormPageComponent implements OnInit {
 
   constructor(
     private postService: PostService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private cdRef: ChangeDetectorRef
   ) {}
@@ -21,6 +23,11 @@ export class CommentFormPageComponent implements OnInit {
   ngOnInit(): void {
     this.getPosts();
   }
+
+  get users() {
+    return this.userService.getCurrentUser();
+  }
+
   getPosts() {
     this.postService.loadPost().subscribe((response: Post[]) => {
       this.posts = response.filter((post) => post.id == this.postId);
