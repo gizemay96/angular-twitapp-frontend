@@ -50,6 +50,11 @@ export class CommentsPageComponent implements OnInit {
     this.postService.likePost(post);
   }
 
+  retweet(post:Post) {
+    post.retweetCount ++ ;
+    this.postService.rePost(post);
+  }
+
   likeCommentClick(comment:Comment) {
     comment.likeCount ++;
     this.commentService.likeComment(comment);

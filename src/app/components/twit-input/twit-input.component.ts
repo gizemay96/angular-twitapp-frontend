@@ -46,4 +46,12 @@ export class TwitInputComponent implements OnInit {
 
     (this.tweet.title = ''), (this.tweet.text = '');
   }
+
+  get AvatarImg() {
+    if(this.users) {
+      return this.users ?
+      this.users.profileImgURL :
+      'assets/avatar-placeholder.png'
+    } 
+  }
 }

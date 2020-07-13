@@ -1,6 +1,8 @@
 import { Component, OnInit , Input, Output, EventEmitter } from '@angular/core';
 import { Comment } from '../../types/comment.type';
 import { User } from 'src/app/types/user.type';
+import { environment as env} from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-comment-card',
@@ -25,5 +27,12 @@ export class CommentCardComponent implements OnInit {
   recomment(comment:Comment) {
     this.reComment.emit(comment)
   }
+
+  
+  getAvatarImg(id) {
+     return this.comments[id].user.profileImg ?
+     `${env.baseApiURL}${this.comments[id].user.profileImg.url}` :
+     'assets/avatar-placeholder.png'
+    }
 
 }

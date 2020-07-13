@@ -39,4 +39,9 @@ export class CommentFormPageComponent implements OnInit {
     post.likeCount ++;
     this.postService.likePost(post);
   }
+
+  retweet(post:Post) {
+    post.retweetCount ++ ;
+    this.postService.rePost(post);
+  }
 }

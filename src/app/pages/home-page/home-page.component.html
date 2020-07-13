@@ -7,6 +7,6 @@
     <app-twit-input *ngIf="users" (outputGetPost)="getPosts()"></app-twit-input>
 </div>
 <div class="tweets">
-    <app-tweet-card [users]="users" [posts]="posts" (likeTweet)="like($event)"  (reTweet)="retweet($event)"></app-tweet-card>
+    <app-tweet-card  [users]="users" [posts]="posts" (likeTweet)="like($event)"  (reTweet)="retweet($event)"></app-tweet-card>
 </div>
 </div>

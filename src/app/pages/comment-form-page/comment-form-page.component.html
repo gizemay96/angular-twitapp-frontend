@@ -4,7 +4,7 @@
     <hr />
   </div>
   <div class="selected-tweet">
-    <app-tweet-card (likeTweet)="like($event)" [users] = "users" [posts]="posts"></app-tweet-card>
+    <app-tweet-card (likeTweet)="like($event)" (reTweet)="retweet($event)" [users]="users" [posts]="posts" ></app-tweet-card>
   </div>
   <div class="comment-form">
     <app-comment-form></app-comment-form>

@@ -1,11 +1,12 @@
-<div class="card" *ngFor="let post of posts">
+<div class="card" *ngFor="let post of posts;let indexOfelement=index;">
   <div class="card-body text-light">
     <div class="profile-img">
-      <img class="sm-circle" src="https://unsplash.it/200/200" alt="" />
+      <!-- <img class="sm-circle" src="http://localhost:1337{{post.user.profileImg.url}}" alt="" /> -->
+      <img class="sm-circle" [src]="getAvatarImg(indexOfelement)" alt="" />
     </div>
     <div class="card-texts">
       <div class="text-header">
-        <h5 class="card-title">{{ post.title }}</h5>
+        <h5 class="card-title">{{ post.user.username }}</h5>
         <h6 class="card-nickname">@ {{ post.user.username }}</h6>
       </div>
       <div class="text">

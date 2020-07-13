@@ -6,6 +6,7 @@ import { Comment } from '../../types/comment.type';
 import { Post } from '../../types/post.type';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { environment as env} from 'src/environments/environment';
 
 
 
@@ -64,6 +65,14 @@ export class CommentFormComponent implements OnInit {
     this.comment.text = '';
 
     this.router.navigateByUrl('/tweet/'+ this.posts.id);
+  }
+
+  get AvatarImg() {
+    if(this.users) {
+      return this.users ?
+      this.users.profileImgURL :
+      'assets/avatar-placeholder.png'
+    } 
   }
 
 }

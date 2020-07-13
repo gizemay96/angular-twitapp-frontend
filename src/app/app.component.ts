@@ -21,7 +21,9 @@ export class AppComponent implements OnInit {
   }
 
   get profileImg() {
-    return this.user.profileImgURL;
+    if(this.user){
+      return this.user.profileImgURL;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
-<div *ngFor="let comment of comments" class="card">
+<div *ngFor="let comment of comments;let indexOfelement=index;" class="card">
   <div class="card-body text-light">
     <div class="profile-img">
-      <img class="sm-circle" src="https://unsplash.it/200/200" alt="" />
+      <img class="sm-circle" [src]="getAvatarImg(indexOfelement)" alt="" />
     </div>
     <div class="card-texts">
       <div class="text-header">

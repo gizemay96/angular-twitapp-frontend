@@ -9,6 +9,10 @@
     display: flex;
     margin-top: 20px;
 
+    .form-item{
+      transform: translateY(-15px);
+    }
+
     img{
       margin-right: 20px;
     }

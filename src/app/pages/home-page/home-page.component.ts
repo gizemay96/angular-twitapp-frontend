@@ -9,12 +9,12 @@ import { Post } from 'src/app/types/post.type';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  posts: Post[];
+  posts: Post;
   constructor(
     private postService: PostService,
     private userService: UserService,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getPosts();
@@ -23,22 +23,22 @@ export class HomePageComponent implements OnInit {
   get users() {
     return this.userService.getCurrentUser();
   }
+  
 
   getPosts() {
-    this.postService.loadPost().subscribe((response: Post[]) => {
+    this.postService.loadPost().subscribe((response: Post) => {
       this.posts = response;
       this.cdRef.detectChanges();
     });
   }
 
-  like(post:Post) {
-    post.likeCount ++;
+  like(post: Post) {
+    post.likeCount++;
     this.postService.likePost(post);
   }
 
-  retweet(post:Post) {
-    post.retweetCount ++ ;
+  retweet(post: Post) {
+    post.retweetCount++;
     this.postService.rePost(post);
   }
-
 }
