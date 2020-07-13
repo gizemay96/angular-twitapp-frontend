@@ -44,7 +44,7 @@ export class LoginFormComponent implements OnInit {
 
       this.router.navigateByUrl('/profile');
 
-
+      this.userService.getUserDetails();
     })
   }
 

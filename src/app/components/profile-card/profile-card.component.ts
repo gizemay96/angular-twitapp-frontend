@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProfileCardComponent implements OnInit {
 
   @Input() users;
+  @Input() imgProfile;
 
   constructor() {
    }

@@ -24,6 +24,10 @@ export class ProfilePageComponent implements OnInit {
     this.getUserPosts();
   }
 
+  get profileImg() {
+    return this.users.profileImgURL;
+  }
+
   get users() {
     return this.userService.getCurrentUser();
   }
@@ -39,6 +43,16 @@ export class ProfilePageComponent implements OnInit {
 
   closeEditForm() {
     this.show = false;
+  }
+
+  like(post:Post) {
+    post.likeCount ++;
+    this.postService.likePost(post);
+  }
+
+  retweet(post:Post) {
+    post.retweetCount ++ ;
+    this.postService.rePost(post);
   }
 
 }

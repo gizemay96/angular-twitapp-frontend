@@ -1,11 +1,11 @@
-<div class="profile-page">
+<div *ngIf = "users"  class="profile-page">
   <div class="greeting-text">
     <h4>{{ users.username }}</h4>
     <hr />
   </div>
 
   <div *ngIf="users" class="profile-card">
-    <app-profile-card [users]="users"></app-profile-card>
+    <app-profile-card [imgProfile]="profileImg" [users]="users"></app-profile-card>
 
     <div class="edit-actions">
       <div class="open">
@@ -31,7 +31,7 @@
     <hr />
 
     <div class="user-posts">
-      <app-tweet-card [posts]="posts"></app-tweet-card>
+      <app-tweet-card [users]="users" [posts]="posts" (likeTweet)="like($event)"  (reTweet)="retweet($event)" ></app-tweet-card>
     </div>
 
     <ng-template #gettingUser>

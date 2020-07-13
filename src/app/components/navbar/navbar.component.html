@@ -1,6 +1,7 @@
 <nav class="nav-bar">
   <a routerLink="/" class="app-logo">Hued Tweet</a>
-
+  
+  
   <div *ngIf="!user; else userMenu" class="nav-links">
     <div class="nav-link">
       <button
@@ -64,6 +65,7 @@
 
   <ng-template #userMenu>
     <div class="login-navbar">
+      <img class="sm-circle" [src]="imgProfile" alt="">
       <a class="nav-link">Hello , {{ user.username | titlecase }}</a>
       <a routerLink="/profile" href="#" class="nav-link">Profile</a>
       <a (click)="logout()" href="#" class="nav-link">Logout</a>

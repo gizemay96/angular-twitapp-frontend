@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   @Input() user;
+  @Input() imgProfile;
 
   isLoginModalActive: boolean = false;
 

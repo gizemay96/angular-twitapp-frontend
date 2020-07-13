@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../types/user.type';
+import { environment as env } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   baseUrl = 'http://localhost:1337/users'
-  private users: User[];
+  private users: User;
   private currentUser: User;
 
   constructor(
@@ -36,7 +37,9 @@ export class UserService {
        }
      })
      .subscribe((response: User) => {
-       this.currentUser = response
+       this.currentUser = response;
+
+       this.getUserDetails();
      })
 
   }
@@ -54,4 +57,28 @@ export class UserService {
      this.currentUser = response
    })
   }
+
+  
+  getUserDetails() {
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
+
+    const httpOptions = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    this.http
+      .get(`${env.userApiURL}/${this.currentUser.id}`, httpOptions)
+      .subscribe((response: any) => {
+        if (response.profileImg) {
+          this.currentUser.profileImgURL = `${env.baseApiURL}${response.profileImg.url}`;
+        } else {
+          this.currentUser.profileImgURL = 'assets/avatar-placeholder.png';
+        }
+      });
+  }
+
+
 }

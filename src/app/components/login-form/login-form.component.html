@@ -19,8 +19,9 @@
       [(ngModel)]="form.password"
     />
     <a class="forgot text-muted" href="#">Forgot password?</a>
-    <button class="btn-login" type="submit" [disabled]="isLoading">
+    <button (click) ="close.click()" class="btn-login" type="submit" [disabled]="isLoading">
       {{ isLoading ? "Loading..." : "Login" }}
     </button>
+    <button #close type="button" class="btn btn-default" data-dismiss="modal">Close</button>
   </form>
 </div>

@@ -14,14 +14,15 @@
   }
 
   .image {
-    margin: 0 20px;
-    width: 250px;
-    overflow: hidden;
     transform: translateY(150px);
     position: absolute;
+    padding: 0 15px;
 
     .profile-img {
-      width: 100%;
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+      background-color: black;
       border: 6px solid black;
       border-radius: 50%;
     }

@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
   get user () {
     return this.userService.getCurrentUser();
   }
+
+  get profileImg() {
+    return this.user.profileImgURL;
+  }
 }
 
 

@@ -13,7 +13,9 @@ body {
 
 .sm-circle {
   border-radius: 50%;
-  max-width: 70px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 .xs-circle {
@@ -28,10 +30,9 @@ body {
   margin: 10px 0;
 }
 
-
 .like-btn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   .action-btn {
     padding: 0 6px !important;
     border-radius: 100px !important;
@@ -49,8 +50,8 @@ body {
 }
 
 .retweet-btn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   .action-btn {
     padding: 0 5px !important;
     border-radius: 100px !important;
@@ -72,8 +73,8 @@ body {
 }
 
 .detail-btn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   .action-btn {
     padding: 2px 7.3px !important;
     border-radius: 100px !important;
@@ -91,8 +92,8 @@ body {
 }
 
 .reply-btn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   .action-btn {
     padding: 0 6px !important;
     border-radius: 100px !important;
