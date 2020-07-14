@@ -13,7 +13,7 @@ export class PostService {
   constructor(private http: HttpClient) {}
 
   loadPost() {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}?_sort=created_at:DESC`);
   }
 
   likePost(likedTweet: Post) {

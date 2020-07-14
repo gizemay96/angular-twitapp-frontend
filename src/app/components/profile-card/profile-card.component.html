@@ -3,7 +3,15 @@
     <img class="cover-img" src="https:/unsplash.it/600/309" alt="" />
   </div>
   <div class="image">
-    <img class="profile-img" [src]="imgProfile" alt="" />
+    <img class="profile-img" [src]="fileUrl || imgProfile" alt="" />
+    <div class="upload-img-btn">
+       <div>
+        <button class="upload-btn" (click)="fileInput.click()"><i class="fas fa-plus"></i></button>
+       </div>
+       <div>
+        <button *ngIf = "selectedFile" class="save-btn" (click)="saveImg()">Save</button>
+       </div>
+     </div>
   </div>
 
   <div class="card-texts">
@@ -20,6 +28,9 @@
       </div>
       <div class="created-date info-item">
         <i class="far fa-calendar-alt date-icon"></i> <p> {{ users.created_at | date: "h:mm:ss a ,MMM d,y" }} </p>
+      </div>
+      <div class="file-input">
+        <input (change)="selectFile($event)" class="file-input" type="file" #fileInput>
       </div>
   </div>
   </div>

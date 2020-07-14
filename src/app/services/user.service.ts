@@ -4,19 +4,17 @@ import { User } from '../types/user.type';
 import { environment as env } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-  baseUrl = 'http://localhost:1337/users'
+  baseUrl = 'http://localhost:1337/users';
   private users: User;
   private currentUser: User;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
-  setCurrentUser(user:User = null) {
-    this.currentUser = user
+  setCurrentUser(user: User = null) {
+    this.currentUser = user;
   }
 
   getCurrentUser() {
@@ -24,41 +22,42 @@ export class UserService {
   }
 
   getUsers() {
-    return this.http.get(`${this.baseUrl}`)
+    return this.http.get(`${this.baseUrl}`);
   }
 
   tryToLogin() {
-    const token = window.localStorage.getItem('token')
-    if(!token) return;
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
 
-     this.http.get(`${this.baseUrl}/me`,{
-       headers:{
-         Authorization:`Bearer ${token}`
-       }
-     })
-     .subscribe((response: User) => {
-       this.currentUser = response;
+    this.http
+      .get(`${this.baseUrl}/me`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .subscribe((response: User) => {
+        this.currentUser = response;
 
-       this.getUserDetails();
-     })
-
+        this.getUserDetails();
+      });
   }
 
   editUser(editForm) {
-    const token = window.localStorage.getItem('token')
-    if(!token) return;
+    const token = window.localStorage.getItem('token');
+    if (!token) return;
 
-   this.http.put(`${this.baseUrl}/${editForm.id}`,editForm , {
-     headers:{
-      Authorization:`Bearer ${token}`
-     }
-   })
-   .subscribe ((response:User) => {
-     this.currentUser = response
-   })
+    this.http
+      .put(`${this.baseUrl}/${editForm.id}`, editForm, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .subscribe((response: User) => {
+        this.currentUser = response;
+      });
+    this.getUserDetails();
   }
 
-  
   getUserDetails() {
     const token = window.localStorage.getItem('token');
     if (!token) return;
@@ -80,5 +79,32 @@ export class UserService {
       });
   }
 
+  saveImg(file) {
+    const token = window.localStorage.getItem('token');
+    const form = new FormData();
+    form.append('files', file);
+    // form.append('refId', id);
+    // form.append('ref','user');
+    // form.append('field', 'profileImg');
 
+    return this.http.post(env.uploadApiURL, form, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+
+  editUserImg(userData, userId) {
+    const token = window.localStorage.getItem('token');
+    const id = userId;
+
+    this.http
+      .put(`${env.userApiURL}/${id}`, userData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .subscribe((response: User) => (this.users = response));
+    this.getUserDetails();
+  }
 }

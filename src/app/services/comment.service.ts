@@ -14,7 +14,7 @@ export class CommentService {
   ) { }
 
   loadComments() {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}?_sort=created_at:DESC`);
   }
 
   createComment(newComment) {

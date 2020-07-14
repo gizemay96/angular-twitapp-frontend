@@ -58,4 +58,39 @@
       margin: 0;
     }
   }
+
+  .upload-img-btn{
+    z-index: 1;
+    position: absolute;
+    margin-left: 200px;
+    transform: translateY(-50px);
+    display: flex;
+    align-items: center;
+
+    .upload-btn{
+    padding: 8px 14px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(255, 145, 0);
+    outline: none;
+
+    i{
+      color: white;
+    }
+    }
+
+    .save-btn{
+      padding: 8px 10px;
+      border: none;
+      border-radius: 50px;
+      background-color: cornflowerblue;
+      color: white;
+      font-weight: 500;
+      margin-left:20px;
+    }
+  }
+
+  .file-input{
+    display: none;
+  }
 }
