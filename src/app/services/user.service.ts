@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../types/user.type';
 import { environment as env } from '../../environments/environment';
+import { Post } from '../types/post.type';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,9 @@ export class UserService {
   private users: User;
   private currentUser: User;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    ) {}
 
   setCurrentUser(user: User = null) {
     this.currentUser = user;
@@ -56,6 +59,7 @@ export class UserService {
         this.currentUser = response;
       });
     this.getUserDetails();
+    
   }
 
   getUserDetails() {
@@ -104,7 +108,12 @@ export class UserService {
           Authorization: `Bearer ${token}`,
         },
       })
-      .subscribe((response: User) => (this.users = response));
-    this.getUserDetails();
+      .subscribe((response: User) => {
+        (this.users = response)
+         this.users.posts = response.posts
+      });
+
+    window.location.reload();
+    this.getUserDetails();  
   }
 }

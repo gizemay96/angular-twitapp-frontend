@@ -1,84 +1,120 @@
+.tweet-form {
+  margin: 10px 0;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border: 1px solid #3a444c;
+  border-radius: 5px;
 
-.comment-form{
-    margin: 10px 0;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border: 1px solid #3A444C;
-    border-radius: 5px;
-  
-    .form-body{
-      display: flex;
-      margin-top: 20px;
+  .form-body {
+    display: flex;
+    margin-top: 20px;
 
-      .form-item{
-        transform: translateY(-15px);
-      }
-  
-      img{
-        margin-right: 20px;
-      }
+    .form-item {
+      transform: translateY(-15px);
     }
-  
-  
-    #title {
-        background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.089);
-        border-radius: 5px;
-        padding: 5px 5px;
-        outline: none;
-        color: white;
-      
-        &::placeholder {
-          color: #b3b3b3;
-        }
-      }
-      
-      #text {
-        resize: none;
-        background-color: transparent;
+
+    img {
+      margin-right: 20px;
+    }
+  }
+
+  #title {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    border-radius: 5px;
+    padding: 5px 5px;
+    outline: none;
+    color: white;
+
+    &::placeholder {
+      color: #b3b3b3;
+    }
+  }
+
+  #text {
+    resize: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    font-family: Helvetica;
+    margin-top: 30px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .action-icons {
+      padding-top: 15px;
+
+      button {
+        background: transparent;
         border: none;
         outline: none;
-        color: white;
-        letter-spacing: 1.5px;
-        font-size: 16px;
-        font-family: Helvetica;
-        margin-top: 30px;
       }
-  
-      .actions{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-  
-        .action-icons {
-            padding-top: 15px;
-          i {
-            font-size: 17px;
-            margin-right: 25px;
-          }
-  
-          .fa-image{
-            color: #17a2b8;
-          }
-  
-          .fa-square {
-            color: #dc3545;
-          }
-  
-          .fa-poll-h {
-            color: #dc35aa;
-          }
-  
-          .fa-smile {
-            color: #fbfd5c;
-            color: #ff682c;
-          }
-  
-          .fa-business-time {
-            color: #ff682c;
-          }
-        }
-        
+      i {
+        font-size: 17px;
+        padding-right: 25px;
+        margin: 0;
       }
-  
+
+      .fa-image {
+        color: #17a2b8;
+      }
+
+      .fa-square {
+        color: #dc3545;
+      }
+
+      .fa-poll-h {
+        color: #dc35aa;
+      }
+
+      .fa-smile {
+        color: #fbfd5c;
+        color: #ff682c;
+      }
+
+      .fa-business-time {
+        color: #ff682c;
+      }
+
+      .file-input {
+        display: none;
+      }
+    }
   }
+
+  .form-img {
+    width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 20px;
+    img {
+      width: 500px;
+      height: 350px;
+      object-fit: cover;
+    }
+    .img-close-button {
+      position: absolute;
+      button {
+        margin: 3px;
+        background: #0000008c;
+        border: none;
+        border-radius: 50%;
+        padding: 6px 13px;
+        cursor: pointer;
+
+        i {
+          color: white;
+        }
+      }
+    }
+  }
+}

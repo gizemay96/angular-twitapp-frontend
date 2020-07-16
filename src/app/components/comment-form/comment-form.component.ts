@@ -68,11 +68,9 @@ export class CommentFormComponent implements OnInit {
   }
 
   get AvatarImg() {
-    if(this.users) {
       return this.users ?
       this.users.profileImgURL :
       'assets/avatar-placeholder.png'
-    } 
   }
 
 }

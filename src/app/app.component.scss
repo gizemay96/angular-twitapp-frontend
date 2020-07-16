@@ -1,11 +1,19 @@
 .page{
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: 9fr 3fr;
-    grid-gap: 50px;
-    padding: 0 200px;
+    padding: 0 210px;
+    display: flex;
+    justify-content: space-between;
+
+    .side-nav{
+        width: 280px;
+    }
+
+    .page-body{
+        max-width: 800px;
+    }
 
     .page-side-bar{
         margin-top: 70px;
+        max-width: 350px;
     }
 }

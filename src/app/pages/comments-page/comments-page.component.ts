@@ -24,7 +24,7 @@ export class CommentsPageComponent implements OnInit {
   ) { 
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.getPosts();
     this.getComments();
   }
@@ -32,7 +32,6 @@ export class CommentsPageComponent implements OnInit {
   getPosts () {
     this.postService.loadPost()
     .subscribe((response:Post[]) => this.posts = response.filter((post) => post.id == this.postId))
-    
   }
   
   get users () {
@@ -41,8 +40,7 @@ export class CommentsPageComponent implements OnInit {
   
   getComments() {
     this.commentService.loadComments()
-    .subscribe((response:Comment[]) => this.comments = response.filter((comment) => comment.post.id == this.postId))
-    
+    .subscribe((response:Comment[]) => this.comments = response.filter((comment) => comment.post.id == this.postId))    
   }
 
   like(post:Post) {

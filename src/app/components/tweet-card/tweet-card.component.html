@@ -6,56 +6,44 @@
     </div>
     <div class="card-texts">
       <div class="text-header">
-        <h5 class="card-title">{{ post.user.username }}</h5>
+        <h5 class="card-title">{{ post.user.username | titlecase }}</h5>
         <h6 class="card-nickname">@ {{ post.user.username }}</h6>
       </div>
       <div class="text">
         <p class="card-text">{{ post.text }}</p>
       </div>
-      <div class="tweet-date">
-        <p>{{ post.created_at | date: "h:mm:ss a ,MMM d,y" }}</p>
-      </div>
     </div>
+  </div>
+  <div *ngIf="post.postImg" class="post-img">
+    <img src="http://localhost:1337{{post.postImg.url}}" alt="">
+  </div>
+  <div class="tweet-date">
+    <p>{{ post.created_at | date: "h:mm:ss a ,MMM d,y" }}</p>
   </div>
   <hr />
   <div *ngIf="users; else diasabledButtons" class="card-actions">
     <div class="like-btn">
-      <button
-        (click)="likePost(post)"
-        [id]="'like-' + post.id"
-        class="btn btn-outline-danger action-btn"
-      >
+      <button (click)="likePost(post)" [id]="'like-' + post.id" class="btn btn-outline-danger action-btn">
         <i class="fas fa-heart"></i>
       </button>
       <label [for]="'like-' + post.id"> {{ post.likeCount }} </label>
     </div>
     <div class="retweet-btn">
-      <button
-        diasbled
-        (click)="reTweetPost(post)"
-        [id]="'retweet-' + post.id"
-        class="btn btn-outline-warning action-btn"
-      >
+      <button diasbled (click)="reTweetPost(post)" [id]="'retweet-' + post.id"
+        class="btn btn-outline-warning action-btn">
         <i class="fas fa-retweet"></i>
       </button>
       <label [for]="'retweet-' + post.id"> {{ post.retweetCount }} </label>
     </div>
     <div class="detail-btn">
-      <button
-        [id]="'detail-' + post.id"
-        class="btn btn-outline-info action-btn"
-        [routerLink]="'/tweet/' + post.id"
-      >
+      <button [id]="'detail-' + post.id" class="btn btn-outline-info action-btn" [routerLink]="'/tweet/' + post.id">
         <i class="fas fa-info-circle"></i>
       </button>
       <label [for]="'detail-' + post.id">Detail</label>
     </div>
     <div class="reply-btn">
-      <button
-        [id]="'reply-' + post.id"
-        class="btn btn-outline-success action-btn"
-        [routerLink]="'/commentform/tweet/' + post.id"
-      >
+      <button [id]="'reply-' + post.id" class="btn btn-outline-success action-btn"
+        [routerLink]="'/commentform/tweet/' + post.id">
         <i class="far fa-comment"></i>
       </button>
       <label [for]="'reply-' + post.id">Reply</label>
@@ -67,44 +55,27 @@
   <ng-template #diasabledButtons>
     <div class="card-actions">
       <div class="like-btn">
-        <button
-          disabled
-          (click)="likePost(post)"
-          [id]="'like-' + post.id"
-          class="btn btn-outline-danger action-btn"
-        >
+        <button disabled (click)="likePost(post)" [id]="'like-' + post.id" class="btn btn-outline-danger action-btn">
           <i class="fas fa-heart"></i>
         </button>
         <label [for]="'like-' + post.id"> {{ post.likeCount }} </label>
       </div>
       <div class="retweet-btn">
-        <button
-          disabled
-          (click)="reTweetPost(post)"
-          [id]="'retweet-' + post.id"
-          class="btn btn-outline-warning action-btn"
-        >
+        <button disabled (click)="reTweetPost(post)" [id]="'retweet-' + post.id"
+          class="btn btn-outline-warning action-btn">
           <i class="fas fa-retweet"></i>
         </button>
         <label [for]="'retweet-' + post.id"> {{ post.retweetCount }} </label>
       </div>
       <div class="detail-btn">
-        <button
-          [id]="'detail-' + post.id"
-          class="btn btn-outline-info action-btn"
-          [routerLink]="'/tweet/' + post.id"
-        >
+        <button [id]="'detail-' + post.id" class="btn btn-outline-info action-btn" [routerLink]="'/tweet/' + post.id">
           <i class="fas fa-info-circle"></i>
         </button>
         <label [for]="'detail-' + post.id">Detail</label>
       </div>
       <div class="reply-btn">
-        <button
-          disabled
-          [id]="'reply-' + post.id"
-          class="btn btn-outline-success action-btn"
-          [routerLink]="'/commentform/tweet/' + post.id"
-        >
+        <button disabled [id]="'reply-' + post.id" class="btn btn-outline-success action-btn"
+          [routerLink]="'/commentform/tweet/' + post.id">
           <i class="far fa-comment"></i>
         </button>
         <label [for]="'reply-' + post.id">Reply</label>

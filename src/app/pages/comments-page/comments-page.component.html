@@ -9,8 +9,10 @@
     <div class="greeting">
         <h3> Comments </h3>
     </div>
+    <div>
+    </div>
     <div class="tweet-comments">
-        <app-comment-card [users] ="users"  [comments]="comments" (like)="likeCommentClick($event)" (reComment)="reCommentClick($event)"></app-comment-card>
+        <app-comment-card  [users] ="users"  [comments]="comments" (like)="likeCommentClick($event)" (reComment)="reCommentClick($event)"></app-comment-card>
     </div>
 </div>
 

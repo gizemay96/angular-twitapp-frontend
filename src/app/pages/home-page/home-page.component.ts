@@ -9,6 +9,7 @@ import { Post } from 'src/app/types/post.type';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
+  baseApiURL = 'http://localhost:1337';
   posts: Post;
   constructor(
     private postService: PostService,
@@ -23,13 +24,13 @@ export class HomePageComponent implements OnInit {
   get users() {
     return this.userService.getCurrentUser();
   }
-  
 
   getPosts() {
-    this.postService.loadPost().subscribe((response: Post) => {
-      this.posts = response;
-      this.cdRef.detectChanges();
-    });
+    this.postService.loadPost()
+      .subscribe((response: Post) => {
+        this.posts = response;
+        this.cdRef.detectChanges();
+      });
   }
 
   like(post: Post) {
@@ -41,4 +42,5 @@ export class HomePageComponent implements OnInit {
     post.retweetCount++;
     this.postService.rePost(post);
   }
+
 }

@@ -37,13 +37,6 @@
 
         
       }
-
-      .tweet-date{
-        font-size: 10px;
-        position: relative;
-        transform: translateY(20px);
-      }
-
       .card-text{
         font-size: 15px;
       }
@@ -59,5 +52,25 @@
   .header {
     flex-wrap: inherit;
     align-items: center;
+  }
+
+  .tweet-date{
+    margin: 0 25px;
+    color: white;
+    text-align: right;
+    font-size: 10px;
+    position: relative;
+    transform: translateY(20px);
+  }
+
+  .post-img{
+    background-color: #27292c;
+    margin: 0 25px;
+    border-radius: 20px;
+    img{
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+    }
   }
 }

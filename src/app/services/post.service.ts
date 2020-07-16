@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../types/post.type';
 import { PostRequestModel } from '../types/postRequestModel.type';
+import { UserService } from './user.service';
+import { environment as env } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +12,13 @@ export class PostService {
   post: Post[];
   baseUrl = 'http://localhost:1337/posts';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private userService:UserService
+    ) {}
 
   loadPost() {
-    return this.http.get(`${this.baseUrl}?_sort=created_at:DESC`);
+    return this.http.get(`${this.baseUrl}?_sort=created_at:DESC`);  
   }
 
   likePost(likedTweet: Post) {
@@ -49,5 +54,12 @@ export class PostService {
         Authorization: `Bearer ${token}`,
       },
     });
+  }
+
+  savePostImg(file) {
+    const form = new FormData();
+    form.append('files', file);
+
+    return this.http.post(env.uploadApiURL, form)
   }
 }

@@ -9,7 +9,9 @@
         <button class="upload-btn" (click)="fileInput.click()"><i class="fas fa-plus"></i></button>
        </div>
        <div>
-        <button *ngIf = "selectedFile" class="save-btn" (click)="saveImg()">Save</button>
+        <button *ngIf = "selectedFile && openSaveBtn" class="save-btn" (click)="saveImg()">
+          Save
+        </button>
        </div>
      </div>
   </div>

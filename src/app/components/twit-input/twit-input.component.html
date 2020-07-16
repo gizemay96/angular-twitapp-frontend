@@ -1,4 +1,4 @@
-<div class="comment-form">
+<div class="tweet-form">
   <form action="#" (submit)="sendTweet()">
     <div>
       <div class="form-item">
@@ -21,20 +21,36 @@
         <textarea
           name="text"
           id="text"
-          cols="47"
-          rows="5"
+          cols="100"
+          rows="1"
           placeholder="What's happening ?"
           [(ngModel)]="tweet.text"
         ></textarea>
       </div>
     </div>
+    <div *ngIf="fileUrl" class="form-img">
+      <div>
+        <img [src]="fileUrl" alt="" />
+      </div>
+      <div class="img-close-button">
+        <button type="button" (click)="closeImg()"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
     <div class="actions">
       <div class="action-icons">
-        <a href="/"><i class="far fa-image"></i></a>
-        <a href="/"><i class="far fa-square"></i></a>
-        <a href="/"><i class="fas fa-poll-h"></i></a>
-        <a href="/"><i class="far fa-smile"></i></a>
-        <a href="/"><i class="fas fa-business-time"></i></a>
+        <button type="button" (click)="fileInput.click()">
+          <i class="far fa-image"></i>
+        </button>
+        <button href="/"><i class="far fa-square"></i></button>
+        <button href="/"><i class="fas fa-poll-h"></i></button>
+        <button href="/"><i class="far fa-smile"></i></button>
+        <button href="/"><i class="fas fa-business-time"></i></button>
+        <input
+          (change)="selectFile($event)"
+          class="file-input"
+          type="file"
+          #fileInput
+        />
       </div>
       <div class="action-btn">
         <button class="btn btn-danger" type="submit">Tweet</button>

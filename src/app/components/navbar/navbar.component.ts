@@ -1,5 +1,6 @@
 import { AuthService } from '../../services/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,11 +14,13 @@ export class NavbarComponent implements OnInit {
   isLoginModalActive: boolean = false;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private userService:UserService
 
   ) { }
 
   ngOnInit(): void {
+    this.userService.getUsers();
   }
 
   logout () {

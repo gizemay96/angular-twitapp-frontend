@@ -49,6 +49,7 @@ export class RegisterFormComponent implements OnInit {
         this.isLoading = false;
 
         this.router.navigateByUrl('/');
+        this.userService.getUserDetails()
       });
   }
 

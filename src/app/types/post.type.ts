@@ -9,4 +9,5 @@ import { User } from './user.type';
         updated_at?:string,
         likeCount:number,
         retweetCount:number,
+        postImg?:object
     }
