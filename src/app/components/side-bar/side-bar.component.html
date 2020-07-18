@@ -1,11 +1,23 @@
-<div class="hash">
+<div class="sidebar-content">
+  <div class="hash">
     <h6 class="text-light">Trends For Your</h6>
     <div class="line"></div>
-    <app-hashtags-card></app-hashtags-card>
-    <a class="text-btn">Show More</a>
-</div>
-<div class="follow">
+    <app-hashtags-card
+      [users]="users"
+      [posts
+      ]="posts"
+    ></app-hashtags-card>
+    <!-- <a class="text-btn">Show More</a> -->
+  </div>
+  <div class="follow">
     <h6 class="text-light">Who to follow</h6>
     <div class="line"></div>
-    <app-follow-card></app-follow-card>
+    <app-follow-card
+      *ngIf="currentUser; else warningText"
+      [users]="users"
+    ></app-follow-card>
+    <ng-template #warningText>
+      <h4 class="warning-text">Login to follow users</h4>
+    </ng-template>
+  </div>
 </div>

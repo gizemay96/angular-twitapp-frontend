@@ -8,13 +8,10 @@ import { Post } from '../types/post.type';
   providedIn: 'root',
 })
 export class UserService {
-  baseUrl = 'http://localhost:1337/users';
   private users: User;
   private currentUser: User;
 
-  constructor(
-    private http: HttpClient,
-    ) {}
+  constructor(private http: HttpClient) {}
 
   setCurrentUser(user: User = null) {
     this.currentUser = user;
@@ -25,7 +22,7 @@ export class UserService {
   }
 
   getUsers() {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${env.userApiURL}`);
   }
 
   tryToLogin() {
@@ -33,7 +30,7 @@ export class UserService {
     if (!token) return;
 
     this.http
-      .get(`${this.baseUrl}/me`, {
+      .get(`${env.userApiURL}/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -50,7 +47,7 @@ export class UserService {
     if (!token) return;
 
     this.http
-      .put(`${this.baseUrl}/${editForm.id}`, editForm, {
+      .put(`${env.userApiURL}/${editForm.id}`, editForm, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +56,6 @@ export class UserService {
         this.currentUser = response;
       });
     this.getUserDetails();
-    
   }
 
   getUserDetails() {
@@ -87,9 +83,6 @@ export class UserService {
     const token = window.localStorage.getItem('token');
     const form = new FormData();
     form.append('files', file);
-    // form.append('refId', id);
-    // form.append('ref','user');
-    // form.append('field', 'profileImg');
 
     return this.http.post(env.uploadApiURL, form, {
       headers: {
@@ -109,11 +102,11 @@ export class UserService {
         },
       })
       .subscribe((response: User) => {
-        (this.users = response)
-         this.users.posts = response.posts
+        this.users = response;
+        this.users.posts = response.posts;
       });
 
     window.location.reload();
-    this.getUserDetails();  
+    this.getUserDetails();
   }
 }

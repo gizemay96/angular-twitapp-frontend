@@ -1,48 +1,84 @@
-.nav-bar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.678);
-    padding: 0 60px;
+.nav-bar {
+  background-color: rgba(0, 0, 0, 0.527);
+  padding: 0 40px;
+  color: snow;
+  text-align: center;
+  margin-top: 85px;
+  border-radius: 15px;
+
+  .app-logo {
+    font-weight: 500;
+    font-size: 35px;
+    text-decoration: none;
+    .h {
+      color: orangered;
+      &:hover{
+          color: rgb(99, 86, 146);
+      }
+    }
+
+    .u {
+      color: darkcyan;
+      &:hover{
+        color: rgb(235, 248, 122);
+    }
+    }
+
+    .e {
+      color: darkolivegreen;
+      &:hover{
+        color: rgb(208, 255, 0);
+    }
+    }
+
+    .d {
+      color: goldenrod;
+      &:hover{
+        color: rgb(139, 0, 116);
+    }
+    }
+  }
+
+  .login-navbar {
+    .greeting {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .greeting-text {
+        padding: 15px 5px 5px 10px;
+      }
+    }
+  }
+
+  .nav-links {
+    padding: 15px 0;
+  }
+
+  .nav-link {
+    text-decoration: none;
     color: snow;
+    transition: 200ms ease-in-out;
+    padding: 10px 0;
+    margin: 15px 0;
+    border-left: 1px solid gray;
 
-    a{
-        text-decoration: none;
-        color: snow;
-        transition: 200ms ease-in-out;
-        padding: 20px;
-
-        &:hover{
-            background: darken(orangered, 10%);
-        }
+    &:hover {
+      border-left: 30px solid brown;
     }
-
-    .app-logo{
-        font-weight: 500;
-        font-size: 22px;
-    }
-    
-    .nav-links{
-        display: flex;
-        align-items: center;
-    }
-
-    .login-navbar{
-        display: flex;
-        align-items: center;
-    }
+  }
 }
 
-.login-modal{
-    background-color: rgba(0, 0, 0, 0.651);
-    border-color: #2ecc71;
-    border-radius: 15px;
-    overflow: hidden;
+.login-modal {
+  background-color: rgba(0, 0, 0, 0.651);
+  border-color: #2ecc71;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.register-modal{
-    background-color: rgba(0, 0, 0, 0.651);
-    border-color: #ffc107;
-    border-radius: 15px;
-    overflow: hidden;
+.register-modal {
+  background-color: rgba(0, 0, 0, 0.651);
+  border-color: #ffc107;
+  border-radius: 15px;
+  overflow: hidden;
 }

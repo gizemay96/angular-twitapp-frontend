@@ -10,7 +10,7 @@ import { environment as env } from 'src/environments/environment';
 export class TweetCardComponent implements OnInit{
   @Input() posts: Post[];
   @Input() users;
-  @Input() changePost: boolean = false;
+  // @Input() changePost: boolean = false;
   @Output() likeTweet = new EventEmitter<Post>();
   @Output() reTweet = new EventEmitter<Post>();
 

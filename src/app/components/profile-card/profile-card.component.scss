@@ -1,6 +1,6 @@
 .card {
   background-color: transparent;
-  padding: 10px 40px;
+  padding: 10px 0px;
   border: none;
   .cover {
     height: 300px;
@@ -19,8 +19,8 @@
     padding: 0 15px;
 
     .profile-img {
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       object-fit: contain;
       background-color: black;
       border: 6px solid black;
@@ -29,7 +29,7 @@
   }
 
   .card-texts {
-    margin-top: 120px;
+    margin-top: 80px;
     color: snow;
 
     p {
@@ -62,7 +62,7 @@
   .upload-img-btn{
     z-index: 1;
     position: absolute;
-    margin-left: 200px;
+    margin-left: 150px;
     transform: translateY(-50px);
     display: flex;
     align-items: center;

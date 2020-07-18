@@ -22,6 +22,8 @@ import { HashtagsCardComponent } from './components/hashtags-card/hashtags-card.
 import { FollowCardComponent } from './components/follow-card/follow-card.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { EditProfileFormComponent } from './components/edit-profile-form/edit-profile-form.component';
+import { GreetinPageComponent } from './pages/greetin-page/greetin-page.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { EditProfileFormComponent } from './components/edit-profile-form/edit-pr
     FollowCardComponent,
     ProfileCardComponent,
     EditProfileFormComponent,
+    GreetinPageComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Post } from 'src/app/types/post.type';
+import { User } from 'src/app/types/user.type';
 
 @Component({
   selector: 'app-hashtags-card',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HashtagsCardComponent implements OnInit {
 
+  @Input() posts:Post[];
+  @Input() users:User;
+  
   constructor() { }
 
   ngOnInit(): void {
+    console.log('child init',this.posts)
   }
 
 }

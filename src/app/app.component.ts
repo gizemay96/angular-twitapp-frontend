@@ -1,5 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { UserService } from './services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    public router: Router
   ) {}
 
   ngOnInit() {

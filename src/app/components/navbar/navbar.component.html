@@ -1,74 +1,44 @@
 <nav class="nav-bar">
-  <a routerLink="/" class="app-logo">Hued Tweet</a>
+  <a routerLink="/home" class="app-logo">
+    <span class="h">H</span>
+    <span class="u">U</span>
+    <span class="e">E</span>
+    <span class="d">D</span>
+  </a>
   
   
   <div *ngIf="!user; else userMenu" class="nav-links">
     <div class="nav-link">
       <button
+      routerLink ="/"
       type="button"
       class="btn btn-outline-success"
-      data-toggle="modal"
-      data-target="#exampleLogin"
     >
       Login
     </button>
     </div>
     <div class="nav-link">
       <button
+      routerLink ="/"
       type="button"
       class="btn btn-outline-warning"
-      data-toggle="modal"
-      data-target="#exampleRegister"
     >
       Register
     </button>
     </div>
   </div>
 
-  <!-- ********************* MODALS ***************** -->
-
-  <!--------- Login Modal ------------->
-  <div
-    [hidden] = "isLoginModalActive"
-    data-dismiss="modal"
-    class="modal fade"
-    id="exampleLogin"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content login-modal">
-        <app-login-form (isLoginModalHide)="loginModalHide($event)"></app-login-form>
-      </div>
-    </div>
-  </div>
-
-  <!--------- Register Modal ------------->
-  <div
-    class="modal fade "
-    id="exampleRegister"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content register-modal">
-        <app-register-form></app-register-form>
-      </div>
-    </div>
-  </div>
-
-  <!-- ********************* MODALS ***************** -->
-
   <ng-template #userMenu>
     <div class="login-navbar">
-      <img class="sm-circle" [src]="imgProfile" alt="">
-      <a class="nav-link">Hello , {{ user.username | titlecase }}</a>
-      <a routerLink="/profile" href="#" class="nav-link">Profile</a>
-      <a (click)="logout()" href="#" class="nav-link">Logout</a>
+     <div class="nav-links">
+      <div class="greeting">
+        <img class="sm-circle greeting-img" [src]="imgProfile" alt="">
+      <h5 class="greeting-text">Hello , {{ user.username | titlecase }}</h5>
+       </div>
+        <a routerLink="/home" href="#" class="nav-link">Home</a>
+        <a routerLink="/profile" href="#" class="nav-link">Profile</a>
+        <a (click)="logout()" href="#" class="nav-link">Logout</a>
+     </div>
     </div>
   </ng-template>
 </nav>

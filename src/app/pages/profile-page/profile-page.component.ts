@@ -14,7 +14,7 @@ import { emit } from 'process';
 export class ProfilePageComponent implements OnInit {
   posts: Post[];
   show: boolean = false;
-  changePost: boolean = false;
+  //changePost: boolean = false;
   constructor(
     private userService: UserService,
     private postService: PostService,
@@ -38,7 +38,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   getUserPosts() {
-    this.changePost = true;
+    //this.changePost = true;
     this.postService
     .loadPost()
     .subscribe(

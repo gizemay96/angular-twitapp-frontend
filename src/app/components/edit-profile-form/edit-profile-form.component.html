@@ -1,4 +1,4 @@
- <form action="#"  (submit)="saveUser()">
+ <form (submit)="saveUser()">
       <div class="form-item">
         <label class="label-username" for="username">
           Username :
@@ -23,6 +23,6 @@
         />
       </div>
       <div class="action">
-        <button (click)="closeForm()" class="btn btn-block" type="submit">Save</button>
+        <button (click)="closeForm();saveUser()" class="btn btn-block" type="submit">Save</button>
       </div>
     </form>

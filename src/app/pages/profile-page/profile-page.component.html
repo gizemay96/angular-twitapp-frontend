@@ -1,6 +1,6 @@
 <div *ngIf = "users"  class="profile-page">
   <div class="greeting-text">
-    <h4>{{ users.username }}</h4>
+    <h4>{{ users.username | titlecase}}</h4>
     <hr />
   </div>
 
@@ -31,7 +31,7 @@
     <hr />
 
     <div class="user-posts">
-      <app-tweet-card [users]="users" [posts]="posts" [changePost] = "changePost" (likeTweet)="like($event)"  (reTweet)="retweet($event)" ></app-tweet-card>
+      <app-tweet-card [users]="users" [posts]="posts" (likeTweet)="like($event)"  (reTweet)="retweet($event)" ></app-tweet-card>
     </div>
 
     <ng-template #gettingUser>

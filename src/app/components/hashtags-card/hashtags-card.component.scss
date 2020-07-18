@@ -1,50 +1,82 @@
-.hash-card,.hash-card-two {
-    padding: 0 15px;
-    p{
-        margin: 0;
-    }
-  
-    .category {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #8a98a4;
-      font-size: 12px;
-    }
-  
-    .title {
-      padding: 5px 0;
-      color: #ffffff;
-    }
-  
-    .tweet {
-      color: #8a98a4;
-    }
+.hash-card,
+.hash-card-two {
+  padding: 0 15px;
+  p {
+    margin: 0;
   }
-  
-  .hash-card-two {
-    margin: 10px 0;
-  
-    .title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #ffffff;
-  
-      i{
-      color: #8a98a4;
-      font-size: 12px;
-      }
-    }
-    .content {
-      padding: 5px 0;
-      color: #8a98a4;
-      font-size: 12px;
-    }
-  
-  }
-      .tweet {
-        color: #8a98a4;
-        font-size: 12px;
-      }
 
+  .category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8a98a4;
+    font-size: 12px;
+  }
+
+  .title {
+    padding: 5px 0;
+    color: #ffffff;
+  }
+
+  .tweet {
+    color: #8a98a4;
+  }
+
+  .content {
+    padding: 5px 0;
+    color: #8a98a4;
+    font-size: 12px;
+  }
+}
+
+.hash-card-two {
+  margin: 10px 0;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+
+    i {
+      color: #8a98a4;
+      font-size: 12px;
+    }
+  }
+  .content {
+    padding: 5px 0;
+    color: #8a98a4;
+    font-size: 12px;
+  }
+}
+.tweet {
+  color: #8a98a4;
+  font-size: 12px;
+}
+
+.arrow-btn {
+  border: none;
+  color: white;
+  outline: none;
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: #52525247;
+  min-width: 1rem !important;
+  will-change: transform;
+  transform: translate(-65px, 36px) !important;
+  padding: 0;
+  margin: 0;
+
+  button {
+    margin: 5px 0;
+    border-left: 2px solid darkcyan;
+    color: whitesmoke;
+
+    &:hover {
+      border-left: 15px solid darkcyan;
+      background-color: darken($color: #52525247, $amount: 5%);
+    }
+  }
+}

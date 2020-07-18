@@ -5,12 +5,17 @@
         <img class="xs-circle" [src]="getAvatarImg(indexOfelement)" alt="" />
       </div>
       <div class="card-text">
-        <p class="user-name">{{ user.username }}</p>
+        <p class="user-name">{{ user.username | titlecase}}</p>
         <p class="user-nick">@ {{ user.username }}</p>
       </div>
     </div>
     <div>
-      <button class="btn btn-sm btn-outline-danger">Follow</button>
+      <button *ngIf ="!follow" (click)="deneme1()" class="btn btn-sm btn-outline-danger">
+       Follow
+      </button>
+      <button *ngIf ="follow" (click)="deneme2()" class="btn btn-sm btn-outline-danger">
+        Unfollow
+      </button>
     </div>
   </div>
   <div class="line"></div>

@@ -1,57 +1,43 @@
-<div class="hash-card">
-    <div class="category">
+<div class="hash-cards">
+  <div *ngFor="let post of posts" class="hash-card">
+    <div *ngIf="post.title">
+      <div class="category">
         <p>Trending in Country</p>
-        <i class="fas fa-chevron-down"></i>
+        <div
+          class="btn-group"
+          ngbDropdown
+          role="group"
+          aria-label="Button group with nested dropdown"
+        >
+          <button class="btn arrow-btn" ngbDropdownToggle></button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button
+              class="goTweet-btn"
+              ngbDropdownItem
+              [routerLink]="'/tweet/' + post.id"
+            >
+              Go Tweet
+            </button>
+            <button *ngIf ="users"
+              class="reply-btn"
+              ngbDropdownItem
+              [routerLink]="'commentform/tweet/' + post.id"
+            >
+              Send Reply
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <h5># {{ post.title }}</h5>
+      </div>
+      <div class="tweet">
+        <p>{{ post.likeCount }} Like!</p>
+      </div>
+      <div class="content">
+        <p>{{ post.text }}</p>
+      </div>
     </div>
-    <div class="title">
-        <h5>#Hashtag</h5>
-    </div>
-    <div class="tweet">
-        <p>13.3K Tweets</p>
-    </div>
+  </div>
+  <div class="line"></div>
 </div>
-<div class="line"></div>
-
-<div class="hash-card-two">
-    <div class="title">
-        <h5>#Hashtag</h5>
-        <i class="fas fa-chevron-down"></i>
-    </div>
-    <div class="content">
-        <p>Lorem ipsum is simply dummy text of the prnting
-            and typesetting industry. </p>
-    </div>
-    <div class="tweet">
-        <p>13.3K Tweets</p>
-    </div>
-</div>
-<div class="line"></div>
-
-<div class="hash-card">
-    <div class="category">
-        <p>Trending in Country</p>
-        <i class="fas fa-chevron-down"></i>
-    </div>
-    <div class="title">
-        <h5>#Hashtag</h5>
-    </div>
-    <div class="tweet">
-        <p>13.3K Tweets</p>
-    </div>
-</div>
-<div class="line"></div>
-
-<div class="hash-card">
-    <div class="category">
-        <p>Trending in Country</p>
-        <i class="fas fa-chevron-down"></i>
-    </div>
-    <div class="title">
-        <h5>#Hashtag</h5>
-    </div>
-    <div class="tweet">
-        <p>13.3K Tweets</p>
-    </div>
-</div>
-<div class="line"></div>
-

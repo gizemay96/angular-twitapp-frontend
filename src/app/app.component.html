@@ -1,16 +1,17 @@
-<div>
-  <app-navbar [imgProfile]="profileImg" [user]="user" ></app-navbar>
-</div>
-    
+
     <div class="page">
-        <div class="side-nav">
-        
-        </div>
+        <!-- <div [hidden] = "router.url === '/'" class="side-nav"> 
+            <app-side-nav></app-side-nav>
+        </div> -->
+        <div class="page-navbar" [hidden] = "router.url === '/'">
+            <app-navbar [imgProfile]="profileImg" [user]="user" ></app-navbar>
+          </div>
 
         <div class="page-body">
             <router-outlet></router-outlet>
         </div>
-        <div class="page-side-bar">
+        
+        <div [hidden] = "router.url === '/'" class="page-side-bar">
             <app-side-bar></app-side-bar>
         </div>
     </div>

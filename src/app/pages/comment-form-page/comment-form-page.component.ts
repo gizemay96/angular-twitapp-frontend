@@ -1,4 +1,4 @@
-import { Component, OnInit , ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { UserService } from '../../services/user.service';
@@ -35,13 +35,13 @@ export class CommentFormPageComponent implements OnInit {
     });
   }
 
-  like(post:Post) {
-    post.likeCount ++;
+  like(post: Post) {
+    post.likeCount++;
     this.postService.likePost(post);
   }
 
-  retweet(post:Post) {
-    post.retweetCount ++ ;
+  retweet(post: Post) {
+    post.retweetCount++;
     this.postService.rePost(post);
   }
 }

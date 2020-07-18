@@ -68,6 +68,8 @@ export class TwitInputComponent implements OnInit {
       };
       this.postService.createPost(newTweet).subscribe((response: Post[]) => {
         this.outputGetPost.emit();
+        this.tweet.title = '';
+        this.tweet.text = '';
       });
     }
   }

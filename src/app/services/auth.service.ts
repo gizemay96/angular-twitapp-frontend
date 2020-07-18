@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment as env } from '../../environments/environment';
 import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  baseUrl = 'http://localhost:1337/auth';
-
   constructor(
     private http: HttpClient,
     private userService: UserService,
   ) { }
 
   register (registerData) {
-   return this.http.post(`${this.baseUrl}/local/register`, registerData)
+   return this.http.post(`${env.authApiURL}/local/register`, registerData)
   }
 
   logout() {
@@ -28,7 +26,7 @@ export class AuthService {
   }
 
   login(loginData) {
-    return this.http.post(`${this.baseUrl}/local`, loginData)
+    return this.http.post(`${env.authApiURL}/local`, loginData)
   }
   
 }

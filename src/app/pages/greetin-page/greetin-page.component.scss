@@ -1,0 +1,46 @@
+.greeting-page {
+  width: 1420px;
+  text-align: center;
+
+  h1 {
+    padding: 20px 0;
+    color: white;
+
+    .h {
+      color: orangered;
+      font-size: 65px;
+    }
+
+    .u {
+      color: darkcyan;
+    }
+
+    .e {
+      color: darkolivegreen;
+      font-size: 65px;
+    }
+
+    .d {
+      color: goldenrod;
+    }
+  }
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 70px 0;
+  }
+
+  .get-tweets-card {
+    .get-tweets {
+      width: 500px;
+      height: 200px;
+      display: flex;
+      margin: 0 auto;
+
+      .card-img {
+        width: 190px;
+      }
+    }
+  }
+}

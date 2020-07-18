@@ -1,6 +1,6 @@
 <div class="login-card">
   <form class="box" (submit)="login()">
-    <h1>Login</h1>
+    <h1>Sign In</h1>
     <p class="text-muted">Please enter your Username and password!</p>
     <label for="identifier"></label>
     <input
@@ -19,9 +19,12 @@
       [(ngModel)]="form.password"
     />
     <a class="forgot text-muted" href="#">Forgot password?</a>
-    <button (click) ="close.click()" class="btn-login" type="submit" [disabled]="isLoading">
+    <button class="btn-login" type="submit" [disabled]="isLoading">
       {{ isLoading ? "Loading..." : "Login" }}
     </button>
-    <button #close type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div *ngIf = "noUser" class="error-message">
+      <p>Wrong username or password !</p>
+    </div>
+    <!-- <button #close type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
   </form>
 </div>

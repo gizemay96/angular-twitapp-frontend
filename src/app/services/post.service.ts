@@ -10,7 +10,6 @@ import { environment as env } from '../../environments/environment';
 })
 export class PostService {
   post: Post[];
-  baseUrl = 'http://localhost:1337/posts';
 
   constructor(
     private http: HttpClient,
@@ -18,14 +17,14 @@ export class PostService {
     ) {}
 
   loadPost() {
-    return this.http.get(`${this.baseUrl}?_sort=created_at:DESC`);  
+    return this.http.get(`${env.tweetsApiURL}?_sort=created_at:DESC`);  
   }
 
   likePost(likedTweet: Post) {
     const token = window.localStorage.getItem('token');
     if (!token) return;
 
-    this.http.put(`${this.baseUrl}/${likedTweet.id}`, likedTweet , {
+    this.http.put(`${env.tweetsApiURL}/${likedTweet.id}`, likedTweet , {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -37,7 +36,7 @@ export class PostService {
     const token = window.localStorage.getItem('token');
     if (!token) return;
 
-    this.http.put(`${this.baseUrl}/${reTweet.id}`, reTweet , {
+    this.http.put(`${env.tweetsApiURL}/${reTweet.id}`, reTweet , {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -49,7 +48,7 @@ export class PostService {
     const token = window.localStorage.getItem('token');
     if (!token) return;
 
-    return this.http.post(`${this.baseUrl}`, newTweet, {
+    return this.http.post(`${env.tweetsApiURL}`, newTweet, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

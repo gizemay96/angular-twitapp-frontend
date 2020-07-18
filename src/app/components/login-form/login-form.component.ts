@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
   @Output() isLoginModalHide = new EventEmitter<boolean>();
+  noUser:boolean = false;
   isLoading: boolean = false;
   form = {
     identifier: '',
@@ -45,7 +46,13 @@ export class LoginFormComponent implements OnInit {
       this.router.navigateByUrl('/profile');
 
       this.userService.getUserDetails();
-    })
+      
+    },
+    error => {
+      this.isLoading = false;
+      this.noUser = true;
+    }
+    )
   }
 
 

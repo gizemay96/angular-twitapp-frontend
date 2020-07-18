@@ -9,8 +9,7 @@ import { Post } from 'src/app/types/post.type';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  baseApiURL = 'http://localhost:1337';
-  posts: Post;
+  posts: Post[];
   constructor(
     private postService: PostService,
     private userService: UserService,
@@ -27,7 +26,7 @@ export class HomePageComponent implements OnInit {
 
   getPosts() {
     this.postService.loadPost()
-      .subscribe((response: Post) => {
+      .subscribe((response: Post[]) => {
         this.posts = response;
         this.cdRef.detectChanges();
       });

@@ -30,8 +30,6 @@ export class EditProfileFormComponent implements OnInit {
       ...this.users
     }
     this.userService.editUser(editForm)
-  
-     
    }
 
    closeForm() {
