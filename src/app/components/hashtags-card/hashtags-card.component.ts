@@ -15,7 +15,6 @@ export class HashtagsCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('child init',this.posts)
   }
 
 }

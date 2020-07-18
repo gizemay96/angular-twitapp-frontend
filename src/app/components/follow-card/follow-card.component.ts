@@ -9,7 +9,7 @@ import { environment as env } from 'src/environments/environment';
   styleUrls: ['./follow-card.component.scss']
 })
 export class FollowCardComponent implements OnInit {
-  follow:boolean = false;
+  following:boolean = false;
   @Input() users:User;
 
   constructor(
@@ -24,11 +24,11 @@ export class FollowCardComponent implements OnInit {
       : 'assets/avatar-placeholder.png';
   }
 
-  deneme1(){
-    this.follow = true;
+  follow(){
+    this.following = true;
   }
 
-  deneme2(){
-    this.follow =false;
+  unfollow(){
+    this.following =false;
   }
 }

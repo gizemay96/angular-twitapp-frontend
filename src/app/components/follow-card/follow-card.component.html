@@ -10,10 +10,10 @@
       </div>
     </div>
     <div>
-      <button *ngIf ="!follow" (click)="deneme1()" class="btn btn-sm btn-outline-danger">
+      <button *ngIf ="!following" (click)="follow()" class="btn btn-sm btn-outline-danger">
        Follow
       </button>
-      <button *ngIf ="follow" (click)="deneme2()" class="btn btn-sm btn-outline-danger">
+      <button *ngIf ="following" (click)="unfollow()" class="btn btn-sm btn-outline-danger">
         Unfollow
       </button>
     </div>
