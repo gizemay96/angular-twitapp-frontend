@@ -12,6 +12,7 @@ import { emit } from 'process';
   styleUrls: ['./profile-page.component.scss'],
 })
 export class ProfilePageComponent implements OnInit {
+  //userPosts:Post[];
   posts: Post[];
   show: boolean = false;
   //changePost: boolean = false;
@@ -20,10 +21,11 @@ export class ProfilePageComponent implements OnInit {
     private postService: PostService,
     private cdRef: ChangeDetectorRef
   ) {}
-
-  ngOnInit(): void {
-    this.getUserPosts();
+  
+  get users() {
+    return this.userService.getCurrentUser();
   }
+
 
   get profileImg() {
    if(this.users){
@@ -33,22 +35,30 @@ export class ProfilePageComponent implements OnInit {
    }
   }
 
-  get users() {
-    return this.userService.getCurrentUser();
+  
+
+
+  get userPosts() {
+    //this.changePost = true;
+    // this.postService
+    // .loadPost()
+    // .subscribe(
+    //   (response: Post[]) =>
+    //   {this.posts = response.filter(
+    //     (post) => post.user.id == this.users.id
+    //     );}
+    //   );
+
+    return this.userService.getMyPosts()
   }
 
-  getUserPosts() {
-    //this.changePost = true;
-    this.postService
-    .loadPost()
-    .subscribe(
-      (response: Post[]) =>
-      {this.posts = response.filter(
-        (post) => post.user.id == this.users.id
-        );}
-      );
-    
+
+
+  ngOnInit(): void {
+    this.userService.tryToLogin()
+    //this.getUserPosts();
   }
+
 
   editForm() {
     this.show = true;

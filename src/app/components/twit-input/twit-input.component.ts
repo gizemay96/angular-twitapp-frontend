@@ -13,6 +13,7 @@ export class TwitInputComponent implements OnInit {
   imgClose = false;
   selectedFile: File;
   fileUrl: string | ArrayBuffer;
+  
   tweet = {
     title: '',
     text: '',
@@ -34,9 +35,9 @@ export class TwitInputComponent implements OnInit {
 
   sendTweet() {
     if (this.selectedFile) {
-      this.postService.savePostImg(this.selectedFile).subscribe((response) => {
+      this.postService.savePostImg(this.selectedFile)
+      .subscribe((response) => {
         this.tweet.postImg = response[0];
-
         const newTweet: Post = {
           id: null,
           title: this.tweet.title,
@@ -48,7 +49,8 @@ export class TwitInputComponent implements OnInit {
           retweetCount: 0,
           postImg: this.tweet.postImg,
         };
-        this.postService.createPost(newTweet).subscribe((response: Post[]) => {
+        this.postService.createPost(newTweet)
+        .subscribe((response: Post[]) => {
           this.outputGetPost.emit();
           this.fileUrl = '';
           this.selectedFile = null;
@@ -66,7 +68,8 @@ export class TwitInputComponent implements OnInit {
         retweetCount: 0,
         postImg: null,
       };
-      this.postService.createPost(newTweet).subscribe((response: Post[]) => {
+      this.postService.createPost(newTweet)
+      .subscribe((response: Post[]) => {
         this.outputGetPost.emit();
         this.tweet.title = '';
         this.tweet.text = '';

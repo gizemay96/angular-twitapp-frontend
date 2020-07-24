@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../types/user.type';
 import { environment as env } from '../../environments/environment';
 import { Post } from '../types/post.type';
+import { PostService } from './post.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,9 @@ import { Post } from '../types/post.type';
 export class UserService {
   private users: User;
   private currentUser: User;
+  userTweets:Post[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private postService: PostService) {}
 
   setCurrentUser(user: User = null) {
     this.currentUser = user;
@@ -39,7 +41,18 @@ export class UserService {
         this.currentUser = response;
 
         this.getUserDetails();
+        this.fetchMyTweets();
       });
+  }
+
+  fetchMyTweets() {
+    this.postService
+      .getUserPosts(this.users.id)
+      .subscribe((response) => (this.userTweets = response));
+  }
+
+  getMyPosts() {
+    return this.userTweets;
   }
 
   editUser(editForm) {

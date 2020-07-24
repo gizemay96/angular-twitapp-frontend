@@ -18,7 +18,7 @@ export class AuthService {
 
   logout() {
     window.localStorage.removeItem('token')
-    this.userService.setCurrentUser()
+    this.userService.setCurrentUser();
   }
 
   setToken(token: string) {

@@ -33,7 +33,9 @@
         <img [src]="fileUrl" alt="" />
       </div>
       <div class="img-close-button">
-        <button type="button" (click)="closeImg()"><i class="fas fa-times"></i></button>
+        <button type="button" (click)="closeImg()">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
     </div>
     <div class="actions">
@@ -46,6 +48,7 @@
         <button href="/"><i class="far fa-smile"></i></button>
         <button href="/"><i class="fas fa-business-time"></i></button>
         <input
+          onclick="value = null"
           (change)="selectFile($event)"
           class="file-input"
           type="file"
